@@ -584,6 +584,14 @@
             <em>Au-delà de l'argent : une conviction.</em><br>
             <span class="muted">le numérique responsable passe par la propriété réelle.</span>
         </p>
+
+        <aside class="qr-badge qr-badge--ask">
+            <img src="assets/qr-tangible.svg" alt="QR code Tangible">
+            <div class="qr-caption">
+                <span class="mono flame">EN SAVOIR +</span>
+                <span class="mono muted">leonfvt.fr/tangible</span>
+            </div>
+        </aside>
     </div>
     <aside class="notes">
         <strong>[6:15-7:00 — ASK + VISION]</strong><br>
@@ -602,18 +610,29 @@
         <div class="corner-mark corner-tl"></div>
         <div class="corner-mark corner-tr"></div>
 
-        <div class="closing-logo-wrap">
-            <div class="logo-halo logo-halo--small"></div>
-            <img src="assets/tangible-logo-vertical.svg" alt="Tangible" class="closing-logo">
+        <div class="closing-layout">
+            <div class="closing-logo-wrap">
+                <div class="logo-halo logo-halo--small"></div>
+                <img src="assets/tangible-logo-vertical.svg" alt="Tangible" class="closing-logo">
+            </div>
+
+            <div class="closing-divider"></div>
+
+            <h1 class="closing-slogan">Ne louez plus votre passion. <em>Possédez-la.</em></h1>
+            <p class="closing-en mono">·&nbsp;&nbsp;DON'T RENT YOUR PASSION. OWN IT.&nbsp;&nbsp;·</p>
+
+            <div class="closing-qr-wrap">
+                <div class="qr-big">
+                    <img src="assets/qr-tangible.svg" alt="QR code Tangible">
+                </div>
+                <div class="closing-qr-text">
+                    <p class="mono flame">SCANNEZ · LE SITE COMPLET</p>
+                    <p class="closing-url mono">leonfvt.fr/tangible</p>
+                </div>
+            </div>
+
+            <p class="closing-thanks"><em>— Merci. Vos questions. —</em></p>
         </div>
-
-        <div class="closing-divider"></div>
-
-        <h1 class="closing-slogan">Ne louez plus votre passion. <em>Possédez-la.</em></h1>
-        <p class="closing-en mono">·&nbsp;&nbsp;DON'T RENT YOUR PASSION. OWN IT.&nbsp;&nbsp;·</p>
-
-        <p class="closing-url mono">pixnop.github.io/tangible</p>
-        <p class="closing-thanks"><em>— Merci. Vos questions. —</em></p>
     </div>
     <aside class="notes">
         <strong>[FIN — 7:00]</strong><br>
@@ -624,17 +643,19 @@
 
 </div>
 
-<!-- ═══ HUD (toolbar + progress) ═══ -->
-<div class="hud" id="hud">
-    <button class="hud-btn" id="prevBtn" title="Précédent (←)">◀</button>
-    <div class="hud-progress">
-        <span class="hud-current mono" id="currentSlide">01</span>
-        <span class="mono muted">/ <span id="totalSlides">12</span></span>
-    </div>
-    <button class="hud-btn" id="nextBtn" title="Suivant (→ / Espace)">▶</button>
-    <button class="hud-btn hud-btn-small" id="notesBtn" title="Notes (N)">📝</button>
-    <button class="hud-btn hud-btn-small" id="fullscreenBtn" title="Plein écran (F)">⛶</button>
+<!-- ═══ HUD minimale (coins) ═══ -->
+<button class="hud-edge hud-prev" id="prevBtn" title="Précédent (←)" aria-label="Précédent">
+    <span>◀</span>
+</button>
+<button class="hud-edge hud-next" id="nextBtn" title="Suivant (→)" aria-label="Suivant">
+    <span>▶</span>
+</button>
+<div class="hud-corner" id="hud">
+    <button class="hud-btn-small" id="notesBtn" title="Notes (N)">📝</button>
+    <button class="hud-btn-small" id="fullscreenBtn" title="Plein écran (F)">⛶</button>
 </div>
+<span id="currentSlide" hidden></span>
+<span id="totalSlides" hidden></span>
 
 <!-- ═══ HELP overlay ═══ -->
 <div class="help" id="help">

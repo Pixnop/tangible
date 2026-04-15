@@ -5,16 +5,45 @@
 (() => {
     const deck = document.getElementById('deck');
     const slides = Array.from(document.querySelectorAll('.slide'));
-    const hud = document.getElementById('hud');
-    const notesPanel = null; // notes are per-slide <aside>
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const hudCorner = document.getElementById('hud');
     const help = document.getElementById('help');
 
     const total = slides.length;
-    document.getElementById('totalSlides').textContent = String(total).padStart(2, '0');
-
     let current = 1;
     let notesVisible = false;
     let hudHideTimer = null;
+
+    /* ─── Inject page number into each slide (baked footer) ─── */
+    function makeSpan(cls, text) {
+        const s = document.createElement('span');
+        s.className = cls;
+        s.textContent = text;
+        return s;
+    }
+
+    slides.forEach((s) => {
+        const i = parseInt(s.dataset.slide, 10);
+        const inner = s.querySelector('.slide-inner');
+        if (!inner) return;
+
+        if (!inner.querySelector('.page-num')) {
+            const pn = document.createElement('div');
+            pn.className = 'page-num';
+            pn.appendChild(makeSpan('current', String(i).padStart(2, '0')));
+            pn.appendChild(makeSpan('sep', '/'));
+            pn.appendChild(makeSpan('total', String(total).padStart(2, '0')));
+            inner.appendChild(pn);
+        }
+
+        if (i !== 1 && i !== total && !inner.querySelector('.page-footer-left')) {
+            const ft = document.createElement('div');
+            ft.className = 'page-footer-left';
+            ft.textContent = 'TANGIBLE  ·  SCRUM\u2019INNOV 2026';
+            inner.appendChild(ft);
+        }
+    });
 
     /* ─── Scale slide content to fit viewport ─────────── */
     const deckW = 1920;
@@ -35,13 +64,9 @@
         slides.forEach(s => {
             const i = parseInt(s.dataset.slide, 10);
             s.classList.toggle('active', i === n);
-            // Toggle per-slide notes visibility
             const note = s.querySelector('.notes');
-            if (note) {
-                note.classList.toggle('visible', i === n && notesVisible);
-            }
+            if (note) note.classList.toggle('visible', i === n && notesVisible);
         });
-        document.getElementById('currentSlide').textContent = String(n).padStart(2, '0');
         if (updateHash) history.replaceState(null, '', `#/${n}`);
         showHud();
     }
@@ -53,19 +78,25 @@
 
     /* ─── HUD auto-hide ───────────────────────────────── */
     function showHud() {
-        hud.classList.add('visible');
+        prevBtn.classList.add('visible');
+        nextBtn.classList.add('visible');
+        hudCorner.classList.add('visible');
         clearTimeout(hudHideTimer);
-        hudHideTimer = setTimeout(() => hud.classList.remove('visible'), 2500);
+        hudHideTimer = setTimeout(() => {
+            prevBtn.classList.remove('visible');
+            nextBtn.classList.remove('visible');
+            hudCorner.classList.remove('visible');
+        }, 2500);
     }
 
     document.addEventListener('mousemove', showHud);
     document.addEventListener('touchstart', showHud, { passive: true });
 
     /* ─── Buttons ─────────────────────────────────────── */
-    document.getElementById('prevBtn').addEventListener('click', prev);
-    document.getElementById('nextBtn').addEventListener('click', next);
-    document.getElementById('notesBtn').addEventListener('click', toggleNotes);
-    document.getElementById('fullscreenBtn').addEventListener('click', toggleFullscreen);
+    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+    document.getElementById('notesBtn').addEventListener('click', (e) => { e.stopPropagation(); toggleNotes(); });
+    document.getElementById('fullscreenBtn').addEventListener('click', (e) => { e.stopPropagation(); toggleFullscreen(); });
 
     /* ─── Keyboard ────────────────────────────────────── */
     document.addEventListener('keydown', (e) => {
@@ -76,39 +107,23 @@
             case 'PageDown':
             case ' ':
             case 'Enter':
-                e.preventDefault();
-                next();
-                break;
+                e.preventDefault(); next(); break;
             case 'ArrowLeft':
             case 'ArrowUp':
             case 'PageUp':
-                e.preventDefault();
-                prev();
-                break;
+                e.preventDefault(); prev(); break;
             case 'Home':
-                e.preventDefault();
-                first();
-                break;
+                e.preventDefault(); first(); break;
             case 'End':
-                e.preventDefault();
-                last();
-                break;
+                e.preventDefault(); last(); break;
             case 'f': case 'F':
-                e.preventDefault();
-                toggleFullscreen();
-                break;
+                e.preventDefault(); toggleFullscreen(); break;
             case 'n': case 'N':
-                e.preventDefault();
-                toggleNotes();
-                break;
+                e.preventDefault(); toggleNotes(); break;
             case 'p': case 'P':
-                e.preventDefault();
-                window.print();
-                break;
+                e.preventDefault(); window.print(); break;
             case '?':
-                e.preventDefault();
-                toggleHelp();
-                break;
+                e.preventDefault(); toggleHelp(); break;
             case 'Escape':
                 if (help.classList.contains('visible')) toggleHelp(false);
                 break;
@@ -120,19 +135,17 @@
         }
     });
 
-    /* ─── Click navigation (left half=prev, right half=next) ─ */
+    /* ─── Click navigation (center only — edges have HUD) ─── */
     deck.addEventListener('click', (e) => {
-        // Don't hijack clicks on interactive elements inside slides
-        if (e.target.closest('button, a, .cert-chips, .chip')) return;
+        if (e.target.closest('button, a, .cert-chips, .chip, .qr-badge, .closing-qr-wrap')) return;
         const x = e.clientX;
         const w = window.innerWidth;
-        if (x < w * 0.35) prev();
-        else if (x > w * 0.65) next();
+        if (x > w * 0.15 && x < w * 0.5) prev();
+        else if (x > w * 0.5 && x < w * 0.85) next();
     });
 
     /* ─── Touch swipe ─────────────────────────────────── */
-    let touchStartX = 0;
-    let touchStartY = 0;
+    let touchStartX = 0, touchStartY = 0;
     deck.addEventListener('touchstart', (e) => {
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
@@ -142,8 +155,7 @@
         const dx = e.changedTouches[0].clientX - touchStartX;
         const dy = e.changedTouches[0].clientY - touchStartY;
         if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
-            if (dx < 0) next();
-            else prev();
+            if (dx < 0) next(); else prev();
         }
     }, { passive: true });
 
@@ -157,36 +169,26 @@
     }
     window.addEventListener('hashchange', readHash);
 
-    /* ─── Notes toggle ────────────────────────────────── */
+    /* ─── Notes / Fullscreen / Help ───────────────────── */
     function toggleNotes() {
         notesVisible = !notesVisible;
         showSlide(current, false);
     }
-
-    /* ─── Fullscreen ──────────────────────────────────── */
     function toggleFullscreen() {
-        if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen().catch(() => {});
-        } else {
-            document.exitFullscreen().catch(() => {});
-        }
+        if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+        else document.exitFullscreen().catch(() => {});
     }
-
-    /* ─── Help ────────────────────────────────────────── */
     function toggleHelp(force) {
         const show = force === undefined ? !help.classList.contains('visible') : force;
         help.classList.toggle('visible', show);
     }
-    help.addEventListener('click', (e) => {
-        if (e.target === help) toggleHelp(false);
-    });
+    help.addEventListener('click', (e) => { if (e.target === help) toggleHelp(false); });
 
     /* ─── Init ────────────────────────────────────────── */
     readHash();
     if (!location.hash) showSlide(1, true);
     showHud();
 
-    // Hint: press ? for help
     console.log('%cTangible Pitch ──', 'color: #E6733C; font-weight: bold; font-size: 16px;',
-                '\n→ Keys: arrows, space, F=fullscreen, N=notes, P=print PDF, ?=help');
+                '\n→ ← → arrows, space, F=fullscreen, N=notes, P=print PDF, ?=help');
 })();
