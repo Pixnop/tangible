@@ -54,11 +54,39 @@
     /* ─── Navigation ──────────────────────────────────── */
     function showSlide(n, updateHash = true) {
         n = Math.max(1, Math.min(total, n));
-        current = n;
-        slides.forEach(s => {
-            const i = parseInt(s.dataset.slide, 10);
-            s.classList.toggle('active', i === n);
+        if (n === current && document.querySelector('.slide.active')) {
+            if (updateHash) history.replaceState(null, '', `#/${n}`);
+            return;
+        }
+
+        const direction = n >= current ? 'next' : 'prev';
+        const prevActive = document.querySelector('.slide.active');
+        const newActive = slides[n - 1];
+
+        deck.setAttribute('data-dir', direction);
+
+        // Clean any pending leaving states
+        document.querySelectorAll('.slide.was-active').forEach(s => {
+            s.classList.remove('was-active');
         });
+
+        if (prevActive && prevActive !== newActive) {
+            prevActive.classList.remove('active');
+            prevActive.classList.add('was-active');
+            prevActive.addEventListener('animationend', function handler() {
+                prevActive.classList.remove('was-active');
+                prevActive.removeEventListener('animationend', handler);
+            });
+            // Fallback cleanup
+            setTimeout(() => prevActive.classList.remove('was-active'), 800);
+        }
+
+        // Force animation restart if same class re-applied
+        newActive.classList.remove('active');
+        void newActive.offsetWidth;
+        newActive.classList.add('active');
+
+        current = n;
         if (updateHash) history.replaceState(null, '', `#/${n}`);
         showHud();
     }
