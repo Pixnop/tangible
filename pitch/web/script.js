@@ -88,7 +88,7 @@
 
         current = n;
         if (updateHash) history.replaceState(null, '', `#/${n}`);
-        showHud();
+        // showHud() volontairement absent : les fleches ne reveillent pas l'UI
     }
 
     function next() { showSlide(current + 1); }
