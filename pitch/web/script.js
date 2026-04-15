@@ -96,18 +96,25 @@
     function first() { showSlide(1); }
     function last() { showSlide(total); }
 
-    /* ─── HUD auto-hide ───────────────────────────────── */
+    /* ─── HUD + cursor auto-hide ──────────────────────── */
     function showHud() {
+        document.body.classList.add('cursor-active');
         prevBtn.classList.add('visible');
         nextBtn.classList.add('visible');
         hudCorner.classList.add('visible');
         clearTimeout(hudHideTimer);
         hudHideTimer = setTimeout(() => {
+            document.body.classList.remove('cursor-active');
             prevBtn.classList.remove('visible');
             nextBtn.classList.remove('visible');
             hudCorner.classList.remove('visible');
         }, 2500);
     }
+
+    /* ─── Track fullscreen state ──────────────────────── */
+    document.addEventListener('fullscreenchange', () => {
+        document.body.classList.toggle('is-fullscreen', !!document.fullscreenElement);
+    });
 
     document.addEventListener('mousemove', showHud);
     document.addEventListener('touchstart', showHud, { passive: true });

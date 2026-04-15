@@ -67,6 +67,23 @@ html, body {
     -webkit-text-size-adjust: 100%;
 }
 
+/* ─── Fullscreen : cursor hides with HUD ────────────── */
+body.is-fullscreen {
+    cursor: none;
+    transition: cursor .2s;
+}
+body.is-fullscreen.cursor-active {
+    cursor: default;
+}
+body.is-fullscreen button,
+body.is-fullscreen a {
+    cursor: none;
+}
+body.is-fullscreen.cursor-active button,
+body.is-fullscreen.cursor-active a {
+    cursor: pointer;
+}
+
 img { max-width: 100%; display: block; }
 
 button {
