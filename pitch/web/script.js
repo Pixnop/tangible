@@ -28,14 +28,11 @@
         const inner = s.querySelector('.slide-inner');
         if (!inner) return;
 
-        // Single footer (left) with brand + page number
+        // Footer (left) : brand only, no page number
         if (i !== 1 && i !== total && !inner.querySelector('.page-footer-left')) {
             const ft = document.createElement('div');
             ft.className = 'page-footer-left';
-            ft.appendChild(makeSpan('footer-brand', 'TANGIBLE  \u00b7  SCRUM\u2019INNOV 2026'));
-            ft.appendChild(makeSpan('footer-sep', '\u00b7'));
-            ft.appendChild(makeSpan('footer-page',
-                `${String(i).padStart(2, '0')} / ${String(total).padStart(2, '0')}`));
+            ft.textContent = 'TANGIBLE  \u00b7  SCRUM\u2019INNOV 2026';
             inner.appendChild(ft);
         }
     });
