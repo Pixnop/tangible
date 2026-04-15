@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tangible — Ne louez plus votre passion. Possédez-la. Don't rent your passion. Own it. La plateforme où acheter un film signifie vraiment le posséder.">
+    <meta name="theme-color" content="#1C1F24">
+    <title>Tangible — Ne louez plus votre passion. Possédez-la.</title>
+    <link rel="icon" type="image/svg+xml" href="assets/tangible-icon.svg">
+    <link rel="alternate icon" type="image/png" href="assets/tangible-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ═══ GLOBAL AMBIENT BACKGROUND ═══ -->
+    <div class="film-grain" aria-hidden="true"></div>
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="site-header">
+        <nav class="nav-wrapper" aria-label="Navigation principale">
+            <a href="#top" class="logo-link" aria-label="Tangible — accueil">
+                <img src="assets/tangible-logo-horizontal.svg" alt="Tangible" class="nav-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#probleme">Le problème</a></li>
+                <li><a href="#solution">Comment ça marche</a></li>
+                <li><a href="#propriete">Propriété</a></li>
+                <li><a href="#comparaison">Comparer</a></li>
+                <li><a href="#b2b">Studios</a></li>
+            </ul>
+            <a href="#download" class="btn btn-primary btn-sm">Télécharger</a>
+        </nav>
+    </header>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" id="top">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-grid">
+            <div class="hero-mark" aria-hidden="true">
+                <img src="assets/tangible-icon.svg" alt="" class="hero-icon">
+                <div class="hero-pulse"></div>
+            </div>
+            <div class="hero-content">
+                <span class="eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    Plateforme de cinéma numérique
+                </span>
+                <h1 class="hero-title">
+                    Ne louez plus<br>
+                    votre passion.<br>
+                    <span class="accent">Possédez-la.</span>
+                </h1>
+                <p class="hero-tagline-en">Don't rent your passion. Own it.</p>
+                <p class="hero-subtitle">
+                    Le seul endroit où <strong>acheter un film</strong> signifie vraiment
+                    <strong>le posséder</strong>. Chiffré localement. Vérifié on-chain.
+                    Jouable hors-ligne, à vie — <em>même si Tangible disparaît demain.</em>
+                </p>
+                <div class="hero-ctas">
+                    <a href="#download" class="btn btn-primary">
+                        <span>Télécharger gratuitement</span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 7h12m0 0L7 1m6 6l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="#solution" class="btn btn-ghost">Voir comment ça marche</a>
+                </div>
+                <ul class="hero-platforms">
+                    <li>Windows</li>
+                    <li class="sep">·</li>
+                    <li>macOS</li>
+                    <li class="sep">·</li>
+                    <li>Linux</li>
+                    <li class="sep">·</li>
+                    <li>iOS</li>
+                    <li class="sep">·</li>
+                    <li>Android</li>
+                    <li class="sep">·</li>
+                    <li class="muted">Smart TV (bientôt)</li>
+                </ul>
+            </div>
+        </div>
+        <a href="#probleme" class="scroll-cue" aria-label="Défiler vers le bas">
+            <span></span>
+        </a>
+    </section>
+
+    <!-- ═══ PROBLÈME ═══ -->
+    <section class="problem" id="probleme">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-tag">Le problème</span>
+                <h2 class="section-title">Acheter <span class="strike">≠</span> Posséder</h2>
+                <p class="section-lead">
+                    Depuis 15 ans, « acheter un film numérique » est devenu un abus de langage.
+                    Les plateformes <strong>retirent</strong>, <strong>verrouillent</strong>, <strong>ferment</strong>.
+                    Vous payez pour ne rien garder.
+                </p>
+            </div>
+            <div class="problem-grid">
+                <article class="problem-card">
+                    <div class="problem-year">2021</div>
+                    <h3>Microsoft Movies — fermé</h3>
+                    <p>Arrêt des ventes. Toutes les bibliothèques achetées sont gelées, aucun export possible.</p>
+                </article>
+                <article class="problem-card">
+                    <div class="problem-year">2023</div>
+                    <h3>Disney+ retire</h3>
+                    <p>~50 titres supprimés pour raisons fiscales. <em>Willow</em>, <em>Crater</em>… disparus.</p>
+                </article>
+                <article class="problem-card">
+                    <div class="problem-year">2024</div>
+                    <h3>iTunes bloque</h3>
+                    <p>Déménagez à l'étranger ? Votre bibliothèque peut devenir inaccessible du jour au lendemain.</p>
+                </article>
+                <article class="problem-card">
+                    <div class="problem-year">∞</div>
+                    <h3>Netflix &amp; co</h3>
+                    <p>3 abonnements moyens par foyer, <strong>300 €/an</strong>, zéro fichier qui vous appartient.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SOLUTION ═══ -->
+    <section class="solution" id="solution">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-tag">La solution</span>
+                <h2 class="section-title">Deux piliers. <span class="accent">Une promesse.</span></h2>
+            </div>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-badge">01</div>
+                    <h3>Tangible <span class="accent">Player</span></h3>
+                    <p class="feature-sub">Media center local premium.</p>
+                    <ul class="feature-list">
+                        <li>Bibliothèque personnelle chiffrée AES-256</li>
+                        <li>Lecture <strong>4K HDR · Dolby Vision</strong> · sous-titres</li>
+                        <li>Cast Chromecast / AirPlay / DLNA en un clic</li>
+                        <li>Profils enfants <strong>sécurisés biométriquement</strong></li>
+                        <li><strong>100 % hors-ligne</strong> après téléchargement</li>
+                    </ul>
+                </article>
+                <article class="feature-card feature-card--accent">
+                    <div class="feature-badge">02</div>
+                    <h3>Tangible <span class="accent">Store</span></h3>
+                    <p class="feature-sub">Boutique légale, achat définitif.</p>
+                    <ul class="feature-list">
+                        <li>Films en <strong>achat définitif</strong> (SD / HD / 4K)</li>
+                        <li><strong>Certificat de propriété</strong> cryptographique on-chain</li>
+                        <li>Distribution via réseau <strong>P2P / IPFS</strong></li>
+                        <li>Paiement CB / crypto / TangibleCredits</li>
+                        <li>Marché de <strong>revente</strong> avec royalties ayants droit</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ PROPRIÉTÉ (certificat) ═══ -->
+    <section class="ownership" id="propriete">
+        <div class="ownership-watermark" aria-hidden="true">
+            <img src="assets/tangible-icon.svg" alt="">
+        </div>
+        <div class="container">
+            <div class="section-head">
+                <span class="section-tag section-tag--light">La propriété</span>
+                <h2 class="section-title section-title--light">Prouvée <span class="accent">cryptographiquement.</span></h2>
+            </div>
+            <div class="ownership-wrapper">
+                <div class="certificate" aria-label="Exemple de certificat de propriété Tangible">
+                    <header>
+                        <span class="cert-icon">🎟️</span>
+                        Certificat de propriété Tangible
+                    </header>
+                    <dl>
+                        <dt>Film</dt>        <dd>Dune : Part Two <span class="muted">(2024)</span></dd>
+                        <dt>Qualité</dt>     <dd>4K HDR · Dolby Vision</dd>
+                        <dt>Acheté le</dt>   <dd>15 avril 2026 · 14:32</dd>
+                        <dt>Propriétaire</dt><dd><code>0xAB…E9</code></dd>
+                        <dt>Licence ID</dt>  <dd><code>TNGBL-D2-4K-0x9e3f…</code></dd>
+                        <dt>Hash fichier</dt><dd><code>sha3-256 : 8f…c0</code></dd>
+                        <dt>Tx on-chain</dt> <dd><code>0x7ea…d83</code></dd>
+                    </dl>
+                    <footer>
+                        <span class="chip chip-ok">✓ Vérifiable hors-ligne</span>
+                        <span class="chip chip-ok">♻ Revendable</span>
+                    </footer>
+                </div>
+                <div class="ownership-text">
+                    <h3>Même si Tangible ferme demain&nbsp;…</h3>
+                    <p class="lead-light">Vous gardez tout&nbsp;:</p>
+                    <ul class="check-list">
+                        <li><strong>Le fichier chiffré local</strong> — sur votre disque</li>
+                        <li><strong>Le certificat on-chain</strong> — indépendant de Tangible</li>
+                        <li><strong>Les clés dérivées</strong> — scellées dans votre biométrie</li>
+                    </ul>
+                    <p class="lead-light">
+                        Notre format est <strong>open-source</strong>. Un lecteur tiers peut toujours lire vos films.
+                        <strong>Pas de vendor lock-in. Jamais.</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ COMPARAISON ═══ -->
+    <section class="comparison" id="comparaison">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-tag">Différenciation</span>
+                <h2 class="section-title">Tangible <span class="accent">vs.</span> le reste</h2>
+            </div>
+            <div class="comparison-scroll">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col" class="highlight">
+                                <img src="assets/tangible-icon.svg" alt="" class="th-icon">
+                                Tangible
+                            </th>
+                            <th scope="col">iTunes</th>
+                            <th scope="col">Netflix</th>
+                            <th scope="col">Jellyfin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">Achat définitif</th>           <td class="ok">✓</td><td class="warn">~</td><td class="ko">✕</td><td class="ko">✕</td></tr>
+                        <tr><th scope="row">Téléchargement local</th>      <td class="ok">✓</td><td class="warn">~</td><td class="warn">~</td><td class="ok">✓</td></tr>
+                        <tr><th scope="row">Certificat de propriété</th>   <td class="ok">✓</td><td class="ko">✕</td><td class="ko">✕</td><td class="ko">✕</td></tr>
+                        <tr><th scope="row">Revente possible</th>          <td class="ok">✓</td><td class="ko">✕</td><td class="ko">✕</td><td class="ko">✕</td></tr>
+                        <tr><th scope="row">Hors-ligne à vie</th>          <td class="ok">✓</td><td class="ko">✕</td><td class="ko">✕</td><td class="ok">✓</td></tr>
+                        <tr><th scope="row">Media center complet</th>      <td class="ok">✓</td><td class="warn">~</td><td class="ko">✕</td><td class="ok">✓</td></tr>
+                        <tr><th scope="row">Catalogue légal</th>           <td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td><td class="ko">✕</td></tr>
+                        <tr><th scope="row">Pas de vendor lock</th>        <td class="ok">✓</td><td class="ko">✕</td><td class="ko">✕</td><td class="ok">✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ RESPONSABILITÉ ═══ -->
+    <section class="responsibility">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-tag">Numérique responsable</span>
+                <h2 class="section-title">Trois gestes <span class="accent">responsables.</span></h2>
+            </div>
+            <div class="resp-grid">
+                <article class="resp-card">
+                    <span class="resp-num">1</span>
+                    <h3>Télécharger une fois</h3>
+                    <p>Au lieu de re-streamer dix fois le même film. <strong>−80&nbsp;% d'émissions</strong> estimées vs. SVOD sur 5 visionnages.</p>
+                </article>
+                <article class="resp-card">
+                    <span class="resp-num">2</span>
+                    <h3>Acheter une fois</h3>
+                    <p>Pour garder vingt ans. Fini l'obsolescence logicielle imposée des contenus.</p>
+                </article>
+                <article class="resp-card">
+                    <span class="resp-num">3</span>
+                    <h3>Revendre au lieu de jeter</h3>
+                    <p>Un marché circulaire où les ayants droit touchent <strong>15&nbsp;%</strong> sur chaque revente.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ DOWNLOAD ═══ -->
+    <section class="download" id="download">
+        <div class="download-spotlight" aria-hidden="true"></div>
+        <div class="container download-inner">
+            <img src="assets/tangible-icon.svg" alt="" class="download-icon" aria-hidden="true">
+            <h2>Téléchargez Tangible, <span class="accent">gratuitement.</span></h2>
+            <p>Le Player est gratuit à vie. Vous ne payez que ce que vous achetez.</p>
+            <div class="download-buttons">
+                <a class="btn btn-primary" href="#">Windows</a>
+                <a class="btn btn-primary" href="#">macOS</a>
+                <a class="btn btn-primary" href="#">Linux</a>
+            </div>
+            <p class="muted small">Apps iOS, Android et Smart TV — <em>bientôt</em>.</p>
+        </div>
+    </section>
+
+    <!-- ═══ B2B ═══ -->
+    <section class="b2b" id="b2b">
+        <div class="container b2b-inner">
+            <div class="section-head">
+                <span class="section-tag">B2B — Studios & distributeurs</span>
+                <h2 class="section-title">Pour ceux qui produisent <span class="accent">le cinéma.</span></h2>
+                <p class="section-lead">
+                    Commission <strong>20 %</strong> sur la vente initiale (vous gardez 70 %),
+                    royalties automatiques sur chaque revente, dashboard temps réel, SDK B2B disponible.
+                </p>
+            </div>
+            <a href="mailto:studios@tangible.film" class="btn btn-ghost">Contacter l'équipe studios →</a>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <img src="assets/tangible-logo-horizontal.svg" alt="Tangible" class="footer-logo">
+                <p class="footer-slogan">Ne louez plus votre passion. Possédez-la.</p>
+                <p class="footer-slogan-en"><em>Don't rent your passion. Own it.</em></p>
+            </div>
+            <nav aria-label="Produit">
+                <h4>Produit</h4>
+                <a href="#">Player</a>
+                <a href="#">Store</a>
+                <a href="#">Tangible Pass</a>
+                <a href="#">Marché secondaire</a>
+            </nav>
+            <nav aria-label="Entreprise">
+                <h4>Entreprise</h4>
+                <a href="#">À propos</a>
+                <a href="#">Rapport d'impact</a>
+                <a href="#">Presse</a>
+                <a href="#">Carrières</a>
+            </nav>
+            <nav aria-label="Ressources">
+                <h4>Ressources</h4>
+                <a href="#">Documentation</a>
+                <a href="#">Sécurité &amp; audits</a>
+                <a href="#">Code source</a>
+                <a href="#">Statut</a>
+            </nav>
+        </div>
+        <div class="container footer-bottom">
+            <p class="small muted">© 2026 Tangible SAS · Montpellier, France · Projet Scrum'Innov BUT3 Informatique</p>
+        </div>
+    </footer>
+
+</body>
+</html>
