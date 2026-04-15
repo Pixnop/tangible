@@ -987,11 +987,12 @@ button {
 
 .table-wrap {
     position: absolute;
-    top: 340px;
+    top: 320px;
     left: 90px; right: 90px;
-    bottom: 180px;
+    bottom: 190px;
     display: grid;
     place-items: center;
+    overflow: hidden;
 }
 
 .compare-table {
@@ -1003,10 +1004,10 @@ button {
     border-radius: var(--r-xl);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
-    font-size: 22px;
+    font-size: 19px;
 }
 .compare-table th, .compare-table td {
-    padding: 20px 24px;
+    padding: 14px 22px;
     text-align: center;
     border-bottom: 1px solid rgba(43,47,51,0.06);
 }
@@ -1015,8 +1016,8 @@ button {
     color: var(--ivory);
     font-family: var(--font-body);
     font-weight: 600;
-    font-size: 20px;
-    padding: 28px 24px;
+    font-size: 18px;
+    padding: 20px 22px;
     letter-spacing: 0.03em;
 }
 .compare-table .th-flame {
@@ -1037,13 +1038,13 @@ button {
     background: var(--ivory);
     color: var(--ink);
     font-family: var(--font-body);
-    padding: 18px 24px;
+    padding: 14px 22px;
 }
 .compare-table tbody td.ok,
 .compare-table tbody td.warn,
 .compare-table tbody td.ko {
     font-family: var(--font-mono);
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 700;
 }
 .compare-table tbody td:nth-child(2) {
@@ -1650,11 +1651,11 @@ button {
 
 .vision {
     position: absolute;
-    bottom: 150px;
-    left: 360px; right: 180px;
+    bottom: 130px;
+    left: 0; right: 0;
     text-align: center;
     font-family: var(--font-title);
-    font-size: 26px;
+    font-size: 28px;
     font-style: italic;
     color: var(--muted-light);
 }
