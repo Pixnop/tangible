@@ -42,6 +42,8 @@ jobs:
           cp -r assets final/
           mkdir -p final/vault
           cp -r public/. final/vault/
+          mkdir -p final/pitch
+          cp -r pitch/web/. final/pitch/
           touch final/.nojekyll
 
       - name: Upload artifact
