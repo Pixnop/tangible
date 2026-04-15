@@ -671,8 +671,9 @@ button {
 .cover-logo-wrap {
     position: absolute;
     top: 170px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
+    margin-inline: auto;
     width: 440px;
     height: 440px;
     display: grid;
@@ -699,8 +700,9 @@ button {
 .cover-divider {
     position: absolute;
     top: 640px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
+    margin-inline: auto;
     width: 220px;
     height: 2px;
     background: var(--flame);
@@ -1618,7 +1620,7 @@ button {
     position: absolute;
     top: -40px;
     left: 50%;
-    transform: translateX(-50%);
+    translate: -50% 0;
     font-family: var(--font-mono);
     font-size: 12px;
     font-weight: 700;
