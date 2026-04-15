@@ -28,19 +28,14 @@
         const inner = s.querySelector('.slide-inner');
         if (!inner) return;
 
-        if (!inner.querySelector('.page-num')) {
-            const pn = document.createElement('div');
-            pn.className = 'page-num';
-            pn.appendChild(makeSpan('current', String(i).padStart(2, '0')));
-            pn.appendChild(makeSpan('sep', '/'));
-            pn.appendChild(makeSpan('total', String(total).padStart(2, '0')));
-            inner.appendChild(pn);
-        }
-
+        // Single footer (left) with brand + page number
         if (i !== 1 && i !== total && !inner.querySelector('.page-footer-left')) {
             const ft = document.createElement('div');
             ft.className = 'page-footer-left';
-            ft.textContent = 'TANGIBLE  ·  SCRUM\u2019INNOV 2026';
+            ft.appendChild(makeSpan('footer-brand', 'TANGIBLE  \u00b7  SCRUM\u2019INNOV 2026'));
+            ft.appendChild(makeSpan('footer-sep', '\u00b7'));
+            ft.appendChild(makeSpan('footer-page',
+                `${String(i).padStart(2, '0')} / ${String(total).padStart(2, '0')}`));
             inner.appendChild(ft);
         }
     });
