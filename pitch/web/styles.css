@@ -367,11 +367,10 @@ button {
 /* ─── Watermarks ───────────────────────────────────── */
 .watermark {
     position: absolute;
-    opacity: 0.05;
+    opacity: 0.08;
     pointer-events: none;
     filter: blur(1px);
 }
-.slide[data-bg="dark"] .watermark { filter: blur(1px) brightness(0) invert(1); }
 .wm-right {
     width: 700px;
     height: auto;
@@ -383,6 +382,7 @@ button {
     height: auto;
     top: 10%;
     right: -150px;
+    opacity: 0.06;
 }
 
 /* ─── Inline logo (header) ──────────────────────────── */
@@ -393,7 +393,6 @@ button {
     height: 72px;
     width: auto;
 }
-.slide[data-bg="dark"] .inline-logo { filter: brightness(0) invert(1); }
 
 /* ═══════════════════════════════════════════════════════════════
    SLIDE 1 — COVER
@@ -417,11 +416,11 @@ button {
 
 .cover-logo-wrap {
     position: absolute;
-    top: 180px;
+    top: 170px;
     left: 50%;
     transform: translateX(-50%);
-    width: 400px;
-    height: 400px;
+    width: 440px;
+    height: 440px;
     display: grid;
     place-items: center;
 }
@@ -435,9 +434,11 @@ button {
 }
 .cover-logo {
     position: relative;
-    width: 360px;
+    max-width: 92%;
+    max-height: 92%;
+    width: auto;
     height: auto;
-    filter: brightness(0) invert(1) drop-shadow(0 0 40px var(--flame-glow));
+    filter: drop-shadow(0 0 40px var(--flame-glow));
     animation: float 6s ease-in-out infinite;
 }
 
@@ -1030,7 +1031,6 @@ button {
     height: 28px;
     vertical-align: middle;
     margin-right: 8px;
-    filter: brightness(0) invert(1);
 }
 .compare-table tbody th {
     text-align: left;
@@ -1080,7 +1080,7 @@ button {
 
 .kpis {
     top: 340px;
-    bottom: 240px;
+    bottom: 310px;
 }
 
 .kpi {
@@ -1133,8 +1133,8 @@ button {
 .banner {
     position: absolute;
     left: 90px; right: 90px;
-    bottom: 100px;
-    padding: 40px 48px 40px 64px;
+    bottom: 120px;
+    padding: 32px 48px 32px 64px;
     background: linear-gradient(135deg, var(--ink) 0%, var(--ink-deep) 100%);
     color: var(--ivory);
     border-radius: var(--r-xl);
@@ -1692,8 +1692,8 @@ button {
 
 .closing-logo-wrap {
     position: relative;
-    width: 340px;
-    height: 340px;
+    width: 300px;
+    height: 330px;
     display: grid;
     place-items: center;
 }
@@ -1708,9 +1708,11 @@ button {
 }
 .closing-logo {
     position: relative;
-    width: 320px;
+    max-width: 92%;
+    max-height: 92%;
+    width: auto;
     height: auto;
-    filter: brightness(0) invert(1) drop-shadow(0 0 50px var(--flame-glow));
+    filter: drop-shadow(0 0 50px var(--flame-glow));
     animation: float 6s ease-in-out infinite;
 }
 
