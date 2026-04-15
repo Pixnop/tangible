@@ -12,7 +12,6 @@
 
     const total = slides.length;
     let current = 1;
-    let notesVisible = false;
     let hudHideTimer = null;
 
     /* ─── Inject page number into each slide (baked footer) ─── */
@@ -28,11 +27,14 @@
         const inner = s.querySelector('.slide-inner');
         if (!inner) return;
 
-        // Footer (left) : brand only, no page number
+        // Footer (left) : brand + page number
         if (i !== 1 && i !== total && !inner.querySelector('.page-footer-left')) {
             const ft = document.createElement('div');
             ft.className = 'page-footer-left';
-            ft.textContent = 'TANGIBLE  \u00b7  SCRUM\u2019INNOV 2026';
+            ft.appendChild(makeSpan('footer-brand', 'TANGIBLE  \u00b7  SCRUM\u2019INNOV 2026'));
+            ft.appendChild(makeSpan('footer-sep', '\u00b7'));
+            ft.appendChild(makeSpan('footer-page',
+                `${String(i).padStart(2, '0')} / ${String(total).padStart(2, '0')}`));
             inner.appendChild(ft);
         }
     });
@@ -56,8 +58,6 @@
         slides.forEach(s => {
             const i = parseInt(s.dataset.slide, 10);
             s.classList.toggle('active', i === n);
-            const note = s.querySelector('.notes');
-            if (note) note.classList.toggle('visible', i === n && notesVisible);
         });
         if (updateHash) history.replaceState(null, '', `#/${n}`);
         showHud();
@@ -87,7 +87,6 @@
     /* ─── Buttons ─────────────────────────────────────── */
     prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
     nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
-    document.getElementById('notesBtn').addEventListener('click', (e) => { e.stopPropagation(); toggleNotes(); });
     document.getElementById('fullscreenBtn').addEventListener('click', (e) => { e.stopPropagation(); toggleFullscreen(); });
 
     /* ─── Keyboard ────────────────────────────────────── */
@@ -110,8 +109,6 @@
                 e.preventDefault(); last(); break;
             case 'f': case 'F':
                 e.preventDefault(); toggleFullscreen(); break;
-            case 'n': case 'N':
-                e.preventDefault(); toggleNotes(); break;
             case 'p': case 'P':
                 e.preventDefault(); window.print(); break;
             case '?':
@@ -161,11 +158,7 @@
     }
     window.addEventListener('hashchange', readHash);
 
-    /* ─── Notes / Fullscreen / Help ───────────────────── */
-    function toggleNotes() {
-        notesVisible = !notesVisible;
-        showSlide(current, false);
-    }
+    /* ─── Fullscreen / Help ───────────────────────────── */
     function toggleFullscreen() {
         if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
         else document.exitFullscreen().catch(() => {});
@@ -182,5 +175,5 @@
     showHud();
 
     console.log('%cTangible Pitch ──', 'color: #E6733C; font-weight: bold; font-size: 16px;',
-                '\n→ ← → arrows, space, F=fullscreen, N=notes, P=print PDF, ?=help');
+                '\n→ arrows, space, F=fullscreen, P=print PDF, ?=help');
 })();
