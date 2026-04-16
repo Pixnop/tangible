@@ -344,6 +344,7 @@ button {
 .slide--cover.active .cover-divider,
 .slide--cover.active .cover-slogan,
 .slide--cover.active .cover-slogan-en,
+.slide--cover.active .cover-team,
 .slide--cover.active .cover-footer {
     opacity: 0;
     animation: rise .8s cubic-bezier(.22, 1, .36, 1) forwards;
@@ -353,7 +354,8 @@ button {
 .slide--cover.active .cover-divider   { animation-delay: .70s; animation-name: underline-grow; }
 .slide--cover.active .cover-slogan    { animation-delay: .85s; }
 .slide--cover.active .cover-slogan-en { animation-delay: 1.10s; }
-.slide--cover.active .cover-footer    { animation-delay: 1.30s; }
+.slide--cover.active .cover-team      { animation-delay: 1.25s; }
+.slide--cover.active .cover-footer    { animation-delay: 1.40s; }
 
 /* --- ASK STATS (slide 11) --- */
 .slide.active .ask-cards .ask-stat {
@@ -776,6 +778,37 @@ button {
     letter-spacing: 0.25em;
     color: var(--muted);
     text-align: center;
+}
+
+.cover-team {
+    position: absolute;
+    bottom: 88px;
+    left: 90px; right: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: rgba(251,248,241,0.55);
+}
+.ct-sep {
+    color: var(--flame);
+    opacity: 0.5;
+    font-size: 11px;
+}
+
+.closing-team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: rgba(251,248,241,0.45);
+    margin-bottom: 8px;
 }
 
 @keyframes float {
