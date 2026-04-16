@@ -134,7 +134,7 @@ graph TB
 
 **Willingness to pay (3)**
 11. Prix maximum acceptable pour **acheter définitivement** un film 4K ? (slider 5–25 €)
-12. Seriez-vous prêt à payer **7,99 €/mois** pour un catalogue rotatif **en plus** d'achats à l'unité ?
+12. Seriez-vous prêt à payer **8 €/mois** pour un catalogue rotatif **en plus** d'achats à l'unité ?
 13. Préférez-vous : (A) abonnement à vie SVOD, (B) achat à l'unité, (C) mix des deux
 
 **Concept (2)**

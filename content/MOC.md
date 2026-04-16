@@ -108,6 +108,7 @@ graph TD
 - [[Cases 1 - Offre Relation Segments]] — Livrable 1
 - [[Cases 2 - Activités Partenaires Ressources Canaux]] — Livrable 2
 - [[Cases 3 - Coûts et Revenus]] — Livrable 3
+- [[Partenaires Potentiels]] — **cartographie détaillée** (criticité, phase, porte d'entrée)
 
 ## 🎯 03 — Analyse stratégique
 
@@ -116,6 +117,7 @@ graph TD
 - [[SWOT]] — TOWS intégré
 - [[Losange de Kapferer]] — Qui / Contre qui / Pourquoi / Quand
 - [[Étude de Marché]] — TAM/SAM/SOM + 4 personas chiffrés + protocole sondage
+- [[Niches et Go-To-Market]] — **niche de départ : enseignement** + pricing + Go/No-Go M+9
 
 ## 💰 04 — Financier
 

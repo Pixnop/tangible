@@ -43,7 +43,7 @@ priorité: haute
 │ · Infra CDN/IPFS/Blockchain : ~60k€/an          │   seeders 10%)                        │
 │ · Licences catalogue (avances)                  │ · Commission revente 5% (vendeur 80%,│
 │ · R&D sécurité (TEE, DRM)                       │   studio 15%)                         │
-│ · Marketing / acquisition : ~150k€/an           │ · Tangible Pass : 7,99€/mois         │
+│ · Marketing / acquisition : ~150k€/an           │ · Tangible Pass : 8€/mois         │
 │ · Légal / conformité                            │ · Licence SDK B2B (studios / distr.)  │
 │                                                 │                                       │
 └─────────────────────────────────────────────────┴───────────────────────────────────────┘

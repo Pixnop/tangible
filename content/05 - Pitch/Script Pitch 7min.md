@@ -86,7 +86,7 @@ Si pas de démo : montrer 3 screenshots clés ([[Prototype et Maquettes]]) :
 > **« Notre modèle repose sur 4 revenus :**
 > **1. Commission de 20% sur chaque vente. Studio 70%, seeders P2P 10%, Tangible 20%.**
 > **2. Commission de 5% sur la revente. Le vendeur garde 80%, l'ayant-droit reçoit 15%, nous 5%.**
-> **3. Tangible Pass, optionnel à 7,99€/mois, pour un catalogue rotatif.**
+> **3. Tangible Pass, optionnel à 8€/mois, pour un catalogue rotatif.**
 > **4. Licence SDK B2B pour les studios et distributeurs tiers.**
 >
 > **Objectifs : 8 000 utilisateurs en Année 1 pour 200k€ de CA, 45 000 en Année 2 pour 1,6M€, et 150 000 en Année 3 pour 6,7M€. Break-even début 2028. »**

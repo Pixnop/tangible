@@ -115,6 +115,8 @@ priorité: haute
 
 - [[Business Model Canvas]]
 - [[Cases 1 - Offre Relation Segments]] · [[Cases 3 - Coûts et Revenus]]
+- [[Partenaires Potentiels]] — **cartographie détaillée** avec criticité, phase et porte d'entrée
+- [[Niches et Go-To-Market]] — niche de départ (enseignement) et stratégie d'atterrissage
 - [[5 Forces de Porter]] · [[SWOT]]
 - [[Architecture Technique]] · [[Roadmap Technique]]
 - [[MOC]]

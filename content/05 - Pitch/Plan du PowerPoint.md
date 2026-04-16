@@ -75,7 +75,7 @@ Boutique légale        ✅       ✅      ✅        ❌
 - 4 revenus illustrés icônes :
   - 💰 Commission vente (20%)
   - ♻️ Commission revente (5%)
-  - 🎫 Tangible Pass (7,99€/mois)
+  - 🎫 Tangible Pass (8€/mois)
   - 🛠️ SDK B2B
 - Split simple : Studio 70 / Tangible 20 / Seeders 10
 

@@ -67,7 +67,7 @@ Dynamique : prix libre (cap éventuel à 80% du prix d'achat initial).
 
 ### R3 — Abonnement optionnel « Tangible Pass » (Phase 2+)
 
-- **7,99€ / mois**
+- **8€ / mois**
 - Accès catalogue rotatif (50 films/mois tournants)
 - −15% sur achats définitifs
 - Avant-premières indé

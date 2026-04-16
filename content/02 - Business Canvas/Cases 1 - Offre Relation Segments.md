@@ -39,6 +39,12 @@ priorité: haute
 - **Douleur** : canaux dominés par Netflix/Amazon, visibilité difficile
 - **Volonté de payer** : commission 20% acceptable vs. 30–50% Apple
 
+### Segment 6 — Enseignement supérieur et secondaire *(niche de départ Phase 0)*
+- **Profil** : départements cinéma universités, lycées option CAV, écoles privées (ESRA, La Fémis), bibliothèques, ciné-clubs
+- **Douleur** : outils vieillissants (DVD ADAV), projections en zone grise juridique hors établissement, pas d'outil moderne pour analyse filmique
+- **Volonté de payer** : **budget institutionnel récurrent** 2-25 k€/an/établissement
+- **Pourquoi cette niche en premier** : voir [[Niches et Go-To-Market]] — budget prévisible, concurrence faible, alignement éthique fort, crédibilité qui légitime auprès des majors en Phase 3
+
 ## 💎 Offre
 
 > *« Quelle valeur apportons-nous ? Quels besoins satisfaisons-nous ? Quels produits/services offrons-nous à chaque segment ? »*
@@ -95,4 +101,5 @@ Voir → [[Proposition de Valeur]]
 - [[Losange de Kapferer]] · [[Veille Concurrentielle]]
 - [[Cases 2 - Activités Partenaires Ressources Canaux]]
 - [[Cases 3 - Coûts et Revenus]]
+- [[Partenaires Potentiels]] · [[Niches et Go-To-Market]]
 - [[MOC]]

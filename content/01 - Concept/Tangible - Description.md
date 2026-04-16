@@ -65,7 +65,7 @@ Détail → [[Cases 3 - Coûts et Revenus]]
 |--------|-------------|
 | **Commission vente initiale** (20%) | Studio 70% · Tangible 20% · Seeders P2P 10% |
 | **Commission revente** (5%) | Vendeur 80% · Studio 15% · Tangible 5% |
-| **Tangible Pass** (7,99€/mois, optionnel) | Catalogue rotatif + réductions |
+| **Tangible Pass** (8€/mois, optionnel) | Catalogue rotatif + réductions |
 | **Licence SDK tiers** (B2B) | Accès API / intégration partenaires |
 
 ### Prix utilisateur
