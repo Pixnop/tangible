@@ -1932,8 +1932,10 @@ button {
 }
 .partner-chip img {
     width: auto;
-    max-width: 90%;
-    height: 22px;
+    height: auto;
+    max-width: 100%;
+    max-height: 28px;
+    object-fit: contain;
     filter: brightness(0);
     opacity: 0.85;
     transition: opacity .2s, filter .2s;
