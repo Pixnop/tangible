@@ -2928,6 +2928,26 @@ button {
         radial-gradient(ellipse at 25% 40%, var(--ink) 0%, var(--ink-deep) 70%);
 }
 
+/* ─── Break-even chart (slide 11) ─────────────────── */
+.be-wrap {
+    position: absolute;
+    top: 280px;
+    left: 90px; right: 90px;
+    bottom: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.be-svg {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    display: block;
+}
+.slide.active .be-wrap {
+    animation: rise-scale .8s .4s cubic-bezier(.22, 1, .36, 1) both;
+}
+
 .fin-summary-grid {
     position: absolute;
     top: 340px;
