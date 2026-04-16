@@ -2786,12 +2786,18 @@ button {
     align-self: center;
 }
 
+.pie-wrap { overflow: visible; }
 .pie-ring {
     width: 420px;
     height: 420px;
     border-radius: 50%;
-    box-shadow: var(--shadow-xl);
     flex-shrink: 0;
+    /* Firefox-safe clip : evite que le conic-gradient deborde */
+    -webkit-mask: radial-gradient(circle, #000 99%, transparent 100%);
+            mask: radial-gradient(circle, #000 99%, transparent 100%);
+    clip-path: circle(50% at 50% 50%);
+    /* Shadow via filter:drop-shadow (suit la forme clippée), pas box-shadow */
+    filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.28));
 }
 
 .pie-center {
