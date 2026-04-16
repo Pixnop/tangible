@@ -202,7 +202,8 @@ b, strong { font-weight: 700; }
     justify-content: space-between;
     align-items: center;
     padding: 0 4mm;
-    margin-bottom: 4mm;
+    margin-top: 6mm;
+    margin-bottom: -2mm;
     font-size: 7.5pt;
     letter-spacing: 0.2em;
 }
