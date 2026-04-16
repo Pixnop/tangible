@@ -35,6 +35,14 @@ jobs:
       - name: Build Quartz vault
         run: npx quartz build
 
+      - name: Generate poster PDF
+        run: |
+          google-chrome --headless=new --disable-gpu --no-sandbox \
+            --no-pdf-header-footer --print-to-pdf-no-header \
+            --virtual-time-budget=10000 \
+            --print-to-pdf=poster/tangible-poster.pdf \
+            "file://$PWD/poster/index.html"
+
       - name: Assemble final site
         run: |
           mkdir -p final
@@ -48,6 +56,7 @@ jobs:
           mkdir -p final/poster
           cp -r poster/. final/poster/
           touch final/.nojekyll
+          printf 'tangible-app.eu\n' > final/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
