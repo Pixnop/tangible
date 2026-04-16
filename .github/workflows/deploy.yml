@@ -1,4 +1,5 @@
-name: Deploy Tangible (landing + vault)
+name: Deploy Tangible (landing + vault + pitch + poster)
+
 
 on:
   push:
@@ -44,6 +45,8 @@ jobs:
           cp -r public/. final/vault/
           mkdir -p final/pitch
           cp -r pitch/web/. final/pitch/
+          mkdir -p final/poster
+          cp -r poster/. final/poster/
           touch final/.nojekyll
 
       - name: Upload artifact
