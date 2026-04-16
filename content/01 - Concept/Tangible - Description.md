@@ -71,9 +71,9 @@ Détail → [[Cases 3 - Coûts et Revenus]]
 ### Prix utilisateur
 | Qualité | Prix |
 |---------|------|
-| SD | 5 – 8 € |
-| HD | 8 – 12 € |
-| 4K | 12 – 18 € |
+| SD | 5 – 7 € |
+| HD | 8 – 11 € |
+| 4K | 12 – 15 € |
 | Bundles | −20% |
 
 ## 🎯 Cibles

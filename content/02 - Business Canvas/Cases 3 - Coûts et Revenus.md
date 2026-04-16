@@ -52,8 +52,8 @@ priorité: haute
 
 | Prix TTC | Répartition |
 |----------|-------------|
-| Ex : **10€ HD** | Studio **7€** · Tangible **2€** · Seeders **1€** |
-| Ex : **15€ 4K** | Studio 10,50€ · Tangible 3€ · Seeders 1,50€ |
+| Ex : **10 € HD** | Studio **7 €** · Tangible **2 €** · Seeders **1 €** |
+| Ex : **15 € 4K** | Studio **10,50 €** · Tangible **3 €** · Seeders **1,50 €** |
 
 Types de prix : **fixe par qualité + bundles -20%**.
 
@@ -61,7 +61,7 @@ Types de prix : **fixe par qualité + bundles -20%**.
 
 | Prix revente | Répartition |
 |--------------|-------------|
-| Ex : **8€** | Vendeur **6,40€** · Studio (royalty) **1,20€** · Tangible **0,40€** |
+| Ex : **10 €** | Vendeur **8 €** · Studio (royalty) **1,50 €** · Tangible **0,50 €** |
 
 Dynamique : prix libre (cap éventuel à 80% du prix d'achat initial).
 

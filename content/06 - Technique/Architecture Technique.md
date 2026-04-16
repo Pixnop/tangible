@@ -115,7 +115,7 @@ sequenceDiagram
     participant BC as Blockchain L2
     participant P2P as Réseau P2P
 
-    U->>C: Clique "Acheter 4K" (14,99€)
+    U->>C: Clique "Acheter 4K" (13 €)
     C->>API: Requête achat (film_id, quality, pub_key)
     API->>PAY: Crée paiement
     U->>PAY: Valide paiement
@@ -151,7 +151,7 @@ sequenceDiagram
     A->>API: Trouve & accepte l'offre
     A->>API: Paie 8€
     API->>BC: Exécute transfert licence + split automatique
-    BC-->>BC: Vendeur 6,40€ / Studio 1,20€ / Tangible 0,40€
+    BC-->>BC: Vendeur 8 € / Studio 1,50 € / Tangible 0,50 €
     BC->>C1: Révoque certificat vendeur
     BC->>C2: Mint certificat acheteur
     C1->>C1: Efface fichier chiffré local

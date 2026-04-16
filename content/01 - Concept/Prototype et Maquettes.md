@@ -49,7 +49,7 @@ priorité: haute
 │   └────────────┘                                             │
 │                                                              │
 │   💰 ACHETER                                                 │
-│   ○ SD (5.99 €)   ○ HD (9.99 €)   ● 4K HDR (14.99 €)         │
+│   ○ SD (5 €)   ○ HD (9 €)   ● 4K HDR (13 €)         │
 │                                                              │
 │   🔐 Inclus :                                                │
 │      · Certificat de propriété blockchain                    │
@@ -58,7 +58,7 @@ priorité: haute
 │                                                              │
 │   [  ACHETER DÉFINITIVEMENT  ]   [ Ajouter à ma liste ]      │
 │                                                              │
-│   💬 Marché secondaire : 3 exemplaires en revente à 8.50 €   │
+│   💬 Marché secondaire : 3 exemplaires en revente à 8 €   │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -72,7 +72,7 @@ priorité: haute
 │   Film     : Dune : Part Two (2024)                          │
 │   Qualité  : 4K HDR Dolby Vision                             │
 │   Acheté   : 15 avril 2026 · 14:32                           │
-│   Prix     : 14.99 €                                         │
+│   Prix     : 13 €                                         │
 │                                                              │
 │   Propriétaire : leon.fvt34 (clé pub 0xAB…E9)                │
 │   Licence ID   : TNGBL-D2-4K-0x9e3f…                         │
