@@ -1882,19 +1882,17 @@ button {
 
 .partners-grid {
     position: absolute;
-    top: 320px;
+    top: 310px;
     left: 90px; right: 90px;
     bottom: 100px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr auto;
-    gap: 20px;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 18px;
 }
-/* 7e carte (Institutionnel) : row 3, centree, largeur 1 col */
-.partners-grid > article:nth-child(7) {
-    grid-column: 2;
-    grid-row: 3;
-}
+/* Row 3 : Institutionnel + Media public centres, col 1 vide */
+.partners-grid > article:nth-child(7) { grid-column: 2; grid-row: 3; }
+.partners-grid > article:nth-child(8) { grid-column: 3; grid-row: 3; }
 
 .partner-cat {
     position: relative;
@@ -2038,6 +2036,7 @@ button {
 .slide.active .partners-grid > article:nth-child(5) { animation-delay: .82s; }
 .slide.active .partners-grid > article:nth-child(6) { animation-delay: .90s; }
 .slide.active .partners-grid > article:nth-child(7) { animation-delay: .98s; }
+.slide.active .partners-grid > article:nth-child(8) { animation-delay: 1.06s; }
 
 /* ═══════════════════════════════════════════════════════════════
    SLIDE 12 — ASK
