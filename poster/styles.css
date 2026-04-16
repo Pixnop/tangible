@@ -10,10 +10,10 @@
     --ink-soft:       #3A3E45;
     --ink-line:       #4D525A;
 
-    --flame:          #E6733C;
-    --flame-bright:   #FF8A4F;
-    --flame-deep:     #C5582A;
-    --flame-glow:     rgba(197, 88, 42, 0.45);
+    --flame:          #E15A1E;
+    --flame-bright:   #F27841;
+    --flame-deep:     #B84817;
+    --flame-glow:     rgba(184, 72, 23, 0.45);
 
     --ivory:          #FBF8F1;
     --ivory-deep:     #F3ECDE;
@@ -84,42 +84,6 @@ body {
     min-height: 100vh;
 }
 
-/* Bouton telechargement PDF (ecran uniquement) */
-.dl-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 10000;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 18px;
-    background: #E6733C;
-    color: #FBF8F1;
-    font-family: "Inter", system-ui, sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    border-radius: 999px;
-    box-shadow: 0 8px 24px rgba(230,115,60,.35), 0 2px 6px rgba(0,0,0,.3);
-    transition: transform .2s, box-shadow .2s, background .2s;
-}
-.dl-btn:hover {
-    background: #FF8A4F;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(230,115,60,.5), 0 4px 10px rgba(0,0,0,.4);
-}
-.dl-btn em {
-    font-style: italic;
-    font-weight: 700;
-    color: #FFEDD5;
-    margin-left: 2px;
-}
-.dl-btn svg { flex-shrink: 0; }
-@media print {
-    .dl-btn { display: none !important; }
-}
 
 img { max-width: 100%; display: block; }
 
@@ -360,7 +324,7 @@ b, strong { font-weight: 700; }
     transform: translateY(-50%) rotate(-18deg);
     width: 400mm;
     height: auto;
-    opacity: 0.018;
+    opacity: 0.06;
     filter: grayscale(1) brightness(3);
     pointer-events: none;
     z-index: 1;
@@ -616,8 +580,8 @@ b, strong { font-weight: 700; }
     grid-column: span 2;
 }
 .partner-cat--accent {
-    border-color: var(--flame-deep);
-    background: linear-gradient(135deg, rgba(197,88,42,0.12) 0%, rgba(197,88,42,0.03) 100%);
+    border: 1.5px solid var(--flame);
+    background: rgba(255,255,255,0.02);
 }
 
 .cat-header {
@@ -677,8 +641,8 @@ b, strong { font-weight: 700; }
     flex: 0 1 calc(33.333% - 0.8mm);
 }
 .partner-chip--target {
-    border-color: #E55A1E;
-    background: linear-gradient(135deg, rgba(197,88,42,0.22) 0%, rgba(197,88,42,0.06) 100%);
+    border: 1.5px solid var(--flame);
+    background: rgba(255,255,255,0.04);
     box-shadow: none;
 }
 .partner-chip img {
@@ -716,9 +680,9 @@ b, strong { font-weight: 700; }
     align-items: center;
     gap: 8mm;
     padding: 8mm;
-    border: 1.5px solid var(--flame-deep);
+    border: 1.5px solid var(--flame);
     border-radius: 8px;
-    background: linear-gradient(135deg, rgba(197,88,42,0.14) 0%, rgba(255,255,255,0.015) 100%);
+    background: rgba(255,255,255,0.02);
     margin-top: 5mm;
     margin-bottom: 0;
 }
