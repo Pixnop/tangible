@@ -2065,12 +2065,63 @@ button {
 /* ─── Slide 8 : Segment du marché visé (niche → expansion) ─── */
 .niche-layout {
     position: absolute;
-    top: 290px;
+    top: 270px;
     left: 90px; right: 90px;
-    bottom: 80px;
+    bottom: 70px;
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 16px;
+}
+
+/* KPI strip "Marché fatigué" */
+.market-kpi-strip {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    padding: 22px 32px;
+    background: rgba(43, 47, 51, 0.04);
+    border-left: 6px solid var(--flame);
+    border-radius: var(--r-md);
+    box-shadow: var(--shadow-sm);
+}
+.mks-label {
+    flex: 0 0 auto;
+    font-size: 14px;
+    letter-spacing: 0.24em;
+    font-weight: 700;
+    color: var(--ink);
+    white-space: nowrap;
+}
+.mks-stats {
+    display: flex;
+    gap: 56px;
+    flex: 1;
+    justify-content: space-around;
+}
+.mks-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.mks-num {
+    font-family: var(--font-title);
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1;
+}
+.mks-num i {
+    font-style: normal;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--flame);
+    margin-left: 6px;
+}
+.mks-desc {
+    font-size: 14px;
+    color: var(--muted-dark);
+    letter-spacing: 0.06em;
+    font-weight: 500;
 }
 
 .niche-grid {
@@ -2082,7 +2133,7 @@ button {
 
 .niche-card {
     position: relative;
-    padding: 26px 30px 24px;
+    padding: 20px 26px 18px;
     background: linear-gradient(135deg, var(--paper) 0%, var(--ivory-deep) 100%);
     border-radius: var(--r-xl);
     box-shadow: var(--shadow-md);
@@ -2125,16 +2176,16 @@ button {
 .niche-list {
     list-style: none;
     padding: 0;
-    margin: 0 0 14px;
+    margin: 0 0 10px;
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 5px;
 }
 .niche-list li {
     position: relative;
     padding-left: 18px;
-    font-size: 15px;
-    line-height: 1.4;
+    font-size: 14px;
+    line-height: 1.35;
     color: var(--ink-soft);
 }
 .niche-list li::before {
@@ -2236,18 +2287,20 @@ button {
 }
 
 /* Stagger entrance */
+.slide.active .market-kpi-strip,
 .slide.active .niche-card,
 .slide.active .niche-rationale,
 .slide.active .horizon-step {
     opacity: 0;
     animation: rise-scale .6s cubic-bezier(.22, 1, .36, 1) forwards;
 }
-.slide.active .niche-card:nth-child(1) { animation-delay: .50s; }
-.slide.active .niche-card:nth-child(2) { animation-delay: .65s; }
-.slide.active .niche-rationale         { animation-delay: .85s; }
-.slide.active .horizon-step:nth-child(1) { animation-delay: 1.05s; }
-.slide.active .horizon-step:nth-child(3) { animation-delay: 1.20s; }
-.slide.active .horizon-step:nth-child(5) { animation-delay: 1.35s; }
+.slide.active .market-kpi-strip          { animation-delay: .40s; }
+.slide.active .niche-card:nth-child(1)   { animation-delay: .60s; }
+.slide.active .niche-card:nth-child(2)   { animation-delay: .75s; }
+.slide.active .niche-rationale           { animation-delay: .95s; }
+.slide.active .horizon-step:nth-child(1) { animation-delay: 1.15s; }
+.slide.active .horizon-step:nth-child(3) { animation-delay: 1.30s; }
+.slide.active .horizon-step:nth-child(5) { animation-delay: 1.45s; }
 
 /* ═══════════════════════════════════════════════════════════════
    SLIDE 8 — BUSINESS MODEL
