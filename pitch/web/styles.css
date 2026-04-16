@@ -2254,6 +2254,15 @@ button {
     letter-spacing: 0.06em;
     font-weight: 500;
 }
+.mks-source {
+    font-size: 10px;
+    color: var(--flame);
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-top: 2px;
+}
 
 .niche-grid {
     display: grid;
