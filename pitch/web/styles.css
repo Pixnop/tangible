@@ -4197,7 +4197,7 @@ button {
     position: absolute;
     top: 290px;
     left: 90px; right: 90px;
-    bottom: 220px;
+    bottom: 90px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 22px;
