@@ -1542,6 +1542,82 @@ button {
     left: 0; right: 0;
 }
 
+/* ─── Sidebar Standards / Hardware / Audits ────────── */
+.sec-side {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-self: stretch;
+}
+.sec-side-block {
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+}
+.sec-side-block--accent {
+    background: linear-gradient(135deg, rgba(230, 115, 60, 0.10), rgba(230, 115, 60, 0.02));
+    border-color: rgba(230, 115, 60, 0.3);
+}
+.sec-side-tag {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--flame);
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(230, 115, 60, 0.3);
+}
+.sec-side-block ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.sec-side-block li {
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--muted-light);
+}
+.sec-kw {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--ivory);
+    background: rgba(230, 115, 60, 0.14);
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-right: 4px;
+}
+.sec-side-quote {
+    margin-top: 4px;
+    padding: 12px 16px;
+    border-left: 3px solid var(--flame);
+    background: rgba(230, 115, 60, 0.05);
+    border-radius: 0 8px 8px 0;
+    font-family: var(--font-title);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--muted-light);
+}
+.sec-side-quote em {
+    color: var(--ivory);
+    font-style: italic;
+    font-weight: 500;
+}
+
+.slide.active .sec-side-block {
+    opacity: 0;
+    animation: rise .55s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+.slide.active .sec-side-block:nth-child(1) { animation-delay: .55s; }
+.slide.active .sec-side-block:nth-child(2) { animation-delay: .68s; }
+.slide.active .sec-side-block:nth-child(3) { animation-delay: .81s; }
+.slide.active .sec-side-quote {
+    opacity: 0;
+    animation: rise .5s 1.0s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
 /* ─── Stack 7 couches (gauche) ──────────────────────── */
 .sec-stack {
     display: flex;
