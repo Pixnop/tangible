@@ -55,6 +55,8 @@ jobs:
           cp -r pitch/web/. final/pitch/
           mkdir -p final/poster
           cp -r poster/. final/poster/
+          mkdir -p final/app
+          cp -r app/. final/app/
           touch final/.nojekyll
           printf 'tangible-app.eu\n' > final/CNAME
 

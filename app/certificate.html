@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maquette interactive — Certificat de propriété on-chain Tangible, vérifiable hors-ligne.">
+    <meta name="theme-color" content="#1C1F24">
+    <title>Maquette · Certificat de propriété Tangible</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/tangible-icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- Brand strip (cohérence avec le site principal) -->
+<header class="site-strip">
+    <div class="ss-left">
+        <a href="../"><img src="../assets/tangible-logo-horizontal.svg" alt="Tangible" class="ss-logo"></a>
+        <span class="ss-crumb">Maquette<span class="sep">›</span>Certificat de propriété</span>
+    </div>
+    <nav class="ss-nav">
+        <a href="library.html">Player</a>
+        <a href="film.html">Page film</a>
+        <a href="web-store.html">Store Web</a>
+        <a href="../#propriete">Propriété</a>
+    </nav>
+    <div class="ss-right">
+        <a href="library.html" class="ss-back">← Bibliothèque</a>
+        <a href="../#download" class="ss-download">Télécharger</a>
+    </div>
+</header>
+
+<div class="app-window has-strip">
+
+        <!-- Chrome -->
+        <div class="app-chrome">
+            <div class="chrome-dots">
+                <span class="chrome-dot red"></span>
+                <span class="chrome-dot yellow"></span>
+                <span class="chrome-dot green"></span>
+            </div>
+            <div class="chrome-title">TANGIBLE · Certificat de propriété</div>
+            <div class="chrome-actions">
+                <span class="chrome-status"><span class="s-dot"></span>VÉRIFIÉ ON-CHAIN</span>
+            </div>
+        </div>
+
+        <div class="app-body" style="grid-template-columns: 1fr;">
+            <main class="app-main" style="padding:0;">
+
+                <div class="cert-wrap">
+
+                    <article class="certificate">
+
+                        <div class="cert-header">
+                            <div class="cert-seal"></div>
+                            <div>
+                                <div class="cert-title">Tangible · Proof of Ownership</div>
+                                <div class="cert-title-big">Certificat de propriété</div>
+                            </div>
+                        </div>
+
+                        <div class="cert-body">
+                            <dl>
+                                <dt>Film</dt>
+                                <dd>Dune : Part Two (2024)</dd>
+
+                                <dt>Réalisation</dt>
+                                <dd>Denis Villeneuve</dd>
+
+                                <dt>Qualité</dt>
+                                <dd>4K HDR · Dolby Vision · Atmos</dd>
+
+                                <dt>Date d'achat</dt>
+                                <dd>16 avril 2026 · 14 h 32 · Europe / Paris</dd>
+
+                                <dt>Prix</dt>
+                                <dd>13,00 €</dd>
+
+                                <dt>Propriétaire</dt>
+                                <dd>leon.fvt34 <span style="opacity:.6; font-weight: 400">— clé publique</span></dd>
+
+                                <dt></dt>
+                                <dd class="hash">0xAB7c…Ff3E9</dd>
+
+                                <dt>ID de licence</dt>
+                                <dd class="hash">TNGBL-D2-4K-0x9e3f4b21a8cc</dd>
+
+                                <dt>Empreinte fichier</dt>
+                                <dd class="hash">sha3-256 : 8fa2…9bc0</dd>
+
+                                <dt>Transaction on-chain</dt>
+                                <dd class="hash">
+                                    0x7ea3…c4d83
+                                    <span style="display:inline-block; margin-left: 6px; padding: 2px 8px; background: rgba(230,115,60,0.15); color: var(--flame-deep); border-radius: 4px; font-size: 0.7rem; letter-spacing: 0.08em;">Polygon L2 ↗</span>
+                                </dd>
+
+                                <dt>Bloc</dt>
+                                <dd>#58 392 711 · confirmé 142 fois</dd>
+                            </dl>
+                        </div>
+
+                        <div class="cert-badges">
+                            <span class="b">✓ Vérifiable hors-ligne</span>
+                            <span class="b">♻ Revendable</span>
+                            <span class="b">🔐 Signé Ed25519</span>
+                            <span class="b">📜 RGPD-ready</span>
+                        </div>
+
+                        <div class="cert-actions">
+                            <button class="btn-outline primary">Exporter en PDF</button>
+                            <button class="btn-outline">Revendre cet exemplaire</button>
+                            <button class="btn-outline">Vérifier on-chain ↗</button>
+                            <a href="library.html" class="btn-outline">← Retour bibliothèque</a>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </main>
+        </div>
+
+        <!-- Footer status -->
+        <div class="status-bar">
+            <div class="s-left">
+                <span class="s-ok">CERTIFICAT VALIDÉ</span>
+                <span>SIGNATURE OK · Ed25519</span>
+                <span>ON-CHAIN · POLYGON</span>
+            </div>
+            <div class="s-right">
+                <span>VÉRIFIÉ 142× DEPUIS L'ACHAT</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="app-hint">
+        Ce certificat est vérifiable <strong>sans connexion</strong> grâce à la signature Ed25519 du header du fichier.
+        Si Tangible disparaît demain, le fichier + ce certificat prouvent toujours votre propriété.
+        <br>Voir la page Sécurité du site pour les détails cryptographiques →
+        <a href="../#securite">cryptographie Tangible</a>.
+    </div>
+
+</body>
+</html>

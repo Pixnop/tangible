@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Store web Tangible — achetez définitivement vos films en ligne, accessibles via navigateur. Sans installation.">
+    <meta name="theme-color" content="#FBF8F1">
+    <title>Tangible Store — Achetez définitivement vos films</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/tangible-icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- Brand strip (cohérence avec le site principal) -->
+<header class="site-strip">
+    <div class="ss-left">
+        <a href="../"><img src="../assets/tangible-logo-horizontal.svg" alt="Tangible" class="ss-logo"></a>
+        <span class="ss-crumb">Maquette<span class="sep">›</span>Store Web</span>
+    </div>
+    <nav class="ss-nav">
+        <a href="library.html">Player desktop</a>
+        <a href="../#solution">Solution</a>
+        <a href="../#propriete">Propriété</a>
+        <a href="../#comparaison">Comparer</a>
+        <a href="../#partenaires">Partenaires</a>
+    </nav>
+    <div class="ss-right">
+        <a href="../" class="ss-back">← Site</a>
+        <a href="../#download" class="ss-download">Télécharger</a>
+    </div>
+</header>
+
+<div class="browser-window has-strip">
+
+    <!-- Browser chrome (fake URL bar to show it's the web version) -->
+    <div class="browser-chrome">
+        <div class="browser-tabbar">
+            <div class="browser-tab active">
+                <span class="fav">T</span>
+                <span class="tab-title">Tangible Store — Achetez définitivement vos films</span>
+                <span class="tab-close">×</span>
+            </div>
+            <div class="browser-tab">
+                <span class="fav" style="background:#4285F4;">G</span>
+                <span class="tab-title">Recherches Google</span>
+            </div>
+        </div>
+        <div class="browser-urlbar">
+            <span class="browser-nav-btn" title="Retour">←</span>
+            <span class="browser-nav-btn" title="Suivant" disabled>→</span>
+            <span class="browser-nav-btn" title="Recharger">↻</span>
+            <div class="browser-url">
+                <span class="lock">🔒</span>
+                <span class="u-domain">tangible-app.eu</span><span class="u-path">/store</span>
+                <span class="u-badge">Store Web</span>
+            </div>
+            <span class="browser-nav-btn">⋮</span>
+        </div>
+    </div>
+
+    <!-- Web page content -->
+    <main class="web-content">
+
+        <!-- Top nav (like Apple or Disney+) -->
+        <header class="web-topnav">
+            <a class="w-logo" href="#">
+                <img src="../assets/tangible-icon.svg" alt="">
+                <div>
+                    Tangible
+                    <span class="w-sub">Store · web</span>
+                </div>
+            </a>
+            <nav>
+                <a class="active" href="#">Accueil</a>
+                <a href="#">Nouveautés</a>
+                <a href="#">Indé FR</a>
+                <a href="#">International</a>
+                <a href="#">Éducation</a>
+                <a href="#">Marché revente</a>
+            </nav>
+            <div class="w-search">
+                <span>🔍</span>
+                <span>Chercher un film, un réalisateur…</span>
+            </div>
+            <div class="w-account">
+                <a href="#" class="w-btn-ghost">Se connecter</a>
+                <a href="../#download" class="w-btn-primary">Télécharger l'app</a>
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <section class="web-hero">
+            <div class="bg">
+                <img src="posters/_backdrop-dune.jpg" alt="">
+            </div>
+
+            <!-- Frame corners + annotations cinéma -->
+            <span class="wf-corner tl" aria-hidden="true"></span>
+            <span class="wf-corner tr" aria-hidden="true"></span>
+            <span class="wf-corner bl" aria-hidden="true"></span>
+            <span class="wf-corner br" aria-hidden="true"></span>
+            <div class="wf-annot">
+                <span>Tangible Store</span>
+                <span>Feat. 001 / 12 400</span>
+                <span>WEB · TANGIBLE-APP.EU</span>
+            </div>
+            <div class="wf-annot-r">
+                <span>DCP 21:9 · HDR10+</span>
+                <span>Atmos · 7.1.4</span>
+                <span>À LA UNE</span>
+            </div>
+
+            <div class="web-hero-inner">
+                <div class="eyebrow">● TANGIBLE STORE · WEB</div>
+                <h1>Achetez, <em>possédez.</em><br>Le streaming, sans compromis.</h1>
+                <p>Un fichier chiffré, un certificat on-chain, jouable hors-ligne à vie. Même si Tangible disparaît demain, vos films restent à vous.</p>
+                <div class="cta-row">
+                    <a href="web-film.html" class="btn-w-primary">Voir Dune : Part Two · 13 €</a>
+                    <a href="../#download" class="btn-w-ghost">▶ Comment ça marche</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="h-stat">
+                        <div class="n"><em>12 400</em></div>
+                        <div class="l">Films au catalogue</div>
+                    </div>
+                    <div class="h-stat">
+                        <div class="n"><em>0</em> €</div>
+                        <div class="l">Abonnement · jamais</div>
+                    </div>
+                    <div class="h-stat">
+                        <div class="n"><em>À vie</em></div>
+                        <div class="l">Durée de propriété</div>
+                    </div>
+                    <div class="h-stat">
+                        <div class="n"><em>38</em></div>
+                        <div class="l">Langues de sous-titres</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust band -->
+        <div class="web-trust-band">
+            <div class="tb-item">
+                <div class="tb-ico">🔐</div>
+                <div>
+                    <h3>Chiffré AES-256</h3>
+                    <p>Stocké localement, jamais sur un cloud tiers</p>
+                </div>
+            </div>
+            <div class="tb-item">
+                <div class="tb-ico">⛓️</div>
+                <div>
+                    <h3>Certifié on-chain</h3>
+                    <p>Preuve de propriété vérifiable offline</p>
+                </div>
+            </div>
+            <div class="tb-item">
+                <div class="tb-ico">♻️</div>
+                <div>
+                    <h3>Revendable</h3>
+                    <p>Marché secondaire avec royalties automatiques</p>
+                </div>
+            </div>
+            <div class="tb-item">
+                <div class="tb-ico">🚫</div>
+                <div>
+                    <h3>Zéro abonnement</h3>
+                    <p>Vous payez uniquement ce que vous achetez</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ SECTION INTRO ═══ -->
+        <div class="web-section-intro">
+            <div style="flex:1; min-width:0;">
+                <div class="cine-eyebrow">00 · Catalogue</div>
+                <h2 class="cine-zone-title">Le meilleur du cinéma, <em>à acheter pour de vrai.</em></h2>
+            </div>
+            <p class="cine-zone-sub">12 400 films · indé FR · majors · classiques restaurés 4K</p>
+        </div>
+
+        <!-- Nouveautés -->
+        <section class="web-section">
+            <div class="row-head">
+                <h2><span class="row-number">01</span>Nouveautés <em>du moment</em> <span class="count">+42 films</span></h2>
+                <span class="r-meta"><a href="#">Voir tout →</a></span>
+            </div>
+            <div class="film-row">
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/dune2.jpg" alt="Dune II">
+                        <span class="badge-q hdr">4K HDR</span>
+                        <span class="badge-price">13 €</span>
+                    </div>
+                    <div class="info"><div class="t">Dune : Part Two</div><div class="m"><span>2024</span><span class="sep">·</span><span>Villeneuve</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/anatomiechute.jpg" alt="Anatomie d'une chute">
+                        <span class="badge-q hdr">4K</span>
+                        <span class="badge-price">11 €</span>
+                    </div>
+                    <div class="info"><div class="t">Anatomie d'une chute</div><div class="m"><span>2023</span><span class="sep">·</span><span>Triet</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/zoneofinterest.jpg" alt="The Zone of Interest">
+                        <span class="badge-q hdr">4K</span>
+                        <span class="badge-price">12 €</span>
+                    </div>
+                    <div class="info"><div class="t">The Zone of Interest</div><div class="m"><span>2023</span><span class="sep">·</span><span>Glazer</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/pastlives.jpg" alt="Past Lives">
+                        <span class="badge-q">HD</span>
+                        <span class="badge-price">9 €</span>
+                    </div>
+                    <div class="info"><div class="t">Past Lives</div><div class="m"><span>2023</span><span class="sep">·</span><span>Song</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/drivemycar.jpg" alt="Drive My Car">
+                        <span class="badge-q hdr">4K</span>
+                        <span class="badge-price">11 €</span>
+                    </div>
+                    <div class="info"><div class="t">Drive My Car</div><div class="m"><span>2021</span><span class="sep">·</span><span>Hamaguchi</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/arrival.jpg" alt="Arrival">
+                        <span class="badge-q hdr">4K HDR</span>
+                        <span class="badge-price">13 €</span>
+                    </div>
+                    <div class="info"><div class="t">Arrival</div><div class="m"><span>2016</span><span class="sep">·</span><span>Villeneuve</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/eeaao.jpg" alt="EEAAO">
+                        <span class="badge-q hdr">4K HDR</span>
+                        <span class="badge-price">13 €</span>
+                    </div>
+                    <div class="info"><div class="t">Everything Everywhere</div><div class="m"><span>2022</span><span class="sep">·</span><span>Kwan · Scheinert</span></div></div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Indé FR -->
+        <section class="web-section">
+            <div class="row-head">
+                <h2><span class="row-number">02</span>Indépendant <em>français</em> <span class="count">280 films</span></h2>
+                <span class="r-meta">PARTENAIRES : ADAV · DIAPHANA · MEMENTO · LE PACTE</span>
+            </div>
+            <div class="film-row">
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/amelie.jpg" alt="Amélie">
+                        <span class="badge-q hdr">4K</span>
+                        <span class="badge-price">12 €</span>
+                    </div>
+                    <div class="info"><div class="t">Amélie Poulain</div><div class="m"><span>2001</span><span class="sep">·</span><span>Jeunet</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/les400coups.jpg" alt="Les 400 coups">
+                        <span class="badge-q">HD</span>
+                        <span class="badge-price">6 €</span>
+                    </div>
+                    <div class="info"><div class="t">Les 400 Coups</div><div class="m"><span>1959</span><span class="sep">·</span><span>Truffaut</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/portraitjeunefille.jpg" alt="Portrait de la jeune fille en feu">
+                        <span class="badge-q hdr">4K</span>
+                        <span class="badge-price">11 €</span>
+                    </div>
+                    <div class="info"><div class="t">Portrait de la jeune fille en feu</div><div class="m"><span>2019</span><span class="sep">·</span><span>Sciamma</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/lahaine.jpg" alt="La Haine">
+                        <span class="badge-q hdr">4K</span>
+                        <span class="badge-price">9 €</span>
+                    </div>
+                    <div class="info"><div class="t">La Haine</div><div class="m"><span>1995</span><span class="sep">·</span><span>Kassovitz</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/titane.jpg" alt="Titane">
+                        <span class="badge-q hdr">4K</span>
+                        <span class="badge-price">11 €</span>
+                    </div>
+                    <div class="info"><div class="t">Titane</div><div class="m"><span>2021</span><span class="sep">·</span><span>Ducournau</span></div></div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Classiques -->
+        <section class="web-section">
+            <div class="row-head">
+                <h2><span class="row-number">03</span>Classiques <em>restaurés 4K</em> <span class="count">1200+ titres</span></h2>
+                <span class="r-meta">SCANS ORIGINAUX · PARTENARIATS CINÉMATHÈQUES</span>
+            </div>
+            <div class="film-row">
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/matrix.jpg" alt="The Matrix">
+                        <span class="badge-q hdr">4K HDR</span>
+                        <span class="badge-price">10 €</span>
+                    </div>
+                    <div class="info"><div class="t">The Matrix</div><div class="m"><span>1999</span><span class="sep">·</span><span>Wachowski</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/pulpfiction.jpg" alt="Pulp Fiction">
+                        <span class="badge-q hdr">4K</span>
+                        <span class="badge-price">10 €</span>
+                    </div>
+                    <div class="info"><div class="t">Pulp Fiction</div><div class="m"><span>1994</span><span class="sep">·</span><span>Tarantino</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/chihiro.jpg" alt="Le Voyage de Chihiro">
+                        <span class="badge-q hdr">4K</span>
+                        <span class="badge-price">12 €</span>
+                    </div>
+                    <div class="info"><div class="t">Le Voyage de Chihiro</div><div class="m"><span>2001</span><span class="sep">·</span><span>Miyazaki</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/totoro.jpg" alt="Totoro">
+                        <span class="badge-q">HD</span>
+                        <span class="badge-price">8 €</span>
+                    </div>
+                    <div class="info"><div class="t">Mon Voisin Totoro</div><div class="m"><span>1988</span><span class="sep">·</span><span>Miyazaki</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/bladerunner2049.jpg" alt="Blade Runner 2049">
+                        <span class="badge-q hdr">4K HDR</span>
+                        <span class="badge-price">11 €</span>
+                    </div>
+                    <div class="info"><div class="t">Blade Runner 2049</div><div class="m"><span>2017</span><span class="sep">·</span><span>Villeneuve</span></div></div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Promo band -->
+        <section class="web-promo">
+            <div class="web-promo-inner">
+                <div>
+                    <div class="p-tag">● TANGIBLE PLAYER</div>
+                    <h2>Installez l'app pour une expérience <em>encore meilleure.</em></h2>
+                    <p>
+                        Bibliothèque <strong>hors-ligne</strong>, lecture <strong>4K HDR</strong>, cast
+                        Chromecast / AirPlay, profils enfants sécurisés. Le Store Web fonctionne partout,
+                        l'app offre les fonctions Player complètes.
+                    </p>
+                </div>
+                <a href="../#download" class="p-cta">
+                    Télécharger gratuitement
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L7 1m6 6l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION INTRO REVENTE ═══ -->
+        <div class="web-section-intro">
+            <div style="flex:1; min-width:0;">
+                <div class="cine-eyebrow is-green">04 · Circulaire</div>
+                <h2 class="cine-zone-title">Un marché secondaire <em>qui rétribue.</em></h2>
+            </div>
+            <p class="cine-zone-sub">Revendez vos licences on-chain · 15 % reversés aux ayants droit à chaque transaction</p>
+        </div>
+
+        <!-- Marché revente -->
+        <section class="web-section">
+            <div class="row-head">
+                <h2><span class="row-number">05</span>Marché <em>de revente</em> <span class="count">jusqu'à −44 %</span></h2>
+                <span class="r-meta">SMART CONTRACTS POLYGON · 15 % AUX AYANTS DROIT</span>
+            </div>
+            <div class="film-row">
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/dune2.jpg" alt="Dune II">
+                        <span class="badge-q hdr">4K HDR</span>
+                        <span class="badge-price">8 €</span>
+                    </div>
+                    <div class="info"><div class="t">Dune : Part Two</div><div class="m"><span>3 EN VENTE</span><span class="sep">·</span><span style="color:var(--success)">−38 %</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/oppenheimer.jpg" alt="Oppenheimer">
+                        <span class="badge-q">HD</span>
+                        <span class="badge-price">5 €</span>
+                    </div>
+                    <div class="info"><div class="t">Oppenheimer</div><div class="m"><span>7 EN VENTE</span><span class="sep">·</span><span style="color:var(--success)">−44 %</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/bladerunner2049.jpg" alt="Blade Runner 2049">
+                        <span class="badge-q hdr">4K</span>
+                        <span class="badge-price">7 €</span>
+                    </div>
+                    <div class="info"><div class="t">Blade Runner 2049</div><div class="m"><span>2 EN VENTE</span><span class="sep">·</span><span style="color:var(--success)">−36 %</span></div></div>
+                </a>
+                <a class="film-card" href="web-film.html">
+                    <div class="poster">
+                        <img src="posters/interstellar.jpg" alt="Interstellar">
+                        <span class="badge-q hdr">4K HDR</span>
+                        <span class="badge-price">8 €</span>
+                    </div>
+                    <div class="info"><div class="t">Interstellar</div><div class="m"><span>5 EN VENTE</span><span class="sep">·</span><span style="color:var(--success)">−33 %</span></div></div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="web-footer">
+            <div class="wf-inner">
+                <div class="wf-brand">
+                    <img src="../assets/tangible-logo-horizontal.svg" alt="Tangible" style="filter: brightness(0) invert(1);">
+                    <p>Ne louez plus votre passion. Possédez-la.<br>La plateforme où acheter un film signifie vraiment le posséder.</p>
+                </div>
+                <div>
+                    <h4>Store</h4>
+                    <ul>
+                        <li><a href="#">Nouveautés</a></li>
+                        <li><a href="#">Indépendant FR</a></li>
+                        <li><a href="#">International</a></li>
+                        <li><a href="#">Éducation</a></li>
+                        <li><a href="#">Marché revente</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Produit</h4>
+                    <ul>
+                        <li><a href="library.html">Tangible Player</a></li>
+                        <li><a href="certificate.html">Certificats</a></li>
+                        <li><a href="../#securite">Sécurité</a></li>
+                        <li><a href="../#partenaires">Partenaires</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Ressources</h4>
+                    <ul>
+                        <li><a href="../">Site vitrine</a></li>
+                        <li><a href="../vault/">Documentation</a></li>
+                        <li><a href="../pitch/">Pitch Scrum'Innov</a></li>
+                        <li><a href="mailto:studios@tangible-app.eu">Contacter Studios B2B</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="wf-bottom">
+                <span>© 2026 TANGIBLE · SCRUM'INNOV · IUT MONTPELLIER</span>
+                <span>🔒 TANGIBLE-APP.EU</span>
+            </div>
+        </footer>
+
+    </main>
+</div>
+
+<!-- Command palette FAB -->
+<button class="cmd-fab" aria-label="Ouvrir la palette de commandes">
+    <span class="cmd-ico">⌘</span>
+    <span>Chercher, acheter, lire…</span>
+    <kbd>⌘</kbd><kbd>K</kbd>
+</button>
+
+</body>
+</html>

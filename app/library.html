@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maquette interactive — Tangible Player avec Store intégré.">
+    <meta name="theme-color" content="#1C1F24">
+    <title>Tangible Player — Bibliothèque + Store</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/tangible-icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<!-- Brand strip (cohérence avec le site principal) -->
+<header class="site-strip">
+    <div class="ss-left">
+        <a href="../"><img src="../assets/tangible-logo-horizontal.svg" alt="Tangible" class="ss-logo"></a>
+        <span class="ss-crumb">Maquette<span class="sep">›</span>Player desktop</span>
+    </div>
+    <nav class="ss-nav">
+        <a href="../#probleme">Le problème</a>
+        <a href="../#solution">Solution</a>
+        <a href="../#propriete">Propriété</a>
+        <a href="../#partenaires">Partenaires</a>
+        <a href="web-store.html">Store Web</a>
+    </nav>
+    <div class="ss-right">
+        <a href="../" class="ss-back">← Site</a>
+        <a href="../#download" class="ss-download">Télécharger</a>
+    </div>
+</header>
+
+<div class="app-window has-strip">
+
+    <!-- Chrome -->
+    <div class="app-chrome">
+        <div class="chrome-dots">
+            <span class="chrome-dot red"></span>
+            <span class="chrome-dot yellow"></span>
+            <span class="chrome-dot green"></span>
+        </div>
+        <div class="chrome-title">TANGIBLE PLAYER · Bibliothèque + Store intégré</div>
+        <div class="chrome-actions">
+            <span class="chrome-status"><span class="s-dot"></span>HORS-LIGNE</span>
+        </div>
+    </div>
+
+    <div class="app-body">
+
+        <!-- Sidebar -->
+        <aside class="app-sidebar">
+            <div class="side-brand">
+                <img src="../assets/tangible-icon-light.svg" alt="">
+                <div>
+                    <div class="b-text">Tangible</div>
+                    <span class="b-sub">PLAYER · v1.0</span>
+                </div>
+            </div>
+
+            <div class="side-label side-label--player">Ma bibliothèque</div>
+            <a class="side-item active" href="#player"><span class="ico">🎬</span><span>Tous mes films</span><span class="badge">127</span></a>
+            <a class="side-item" href="#continue"><span class="ico">▶</span><span>Continuer</span><span class="badge">3</span></a>
+            <a class="side-item"><span class="ico">⭐</span><span>Favoris</span></a>
+            <a class="side-item"><span class="ico">📁</span><span>Collections</span></a>
+
+            <div class="side-label side-label--store">Store intégré</div>
+            <a class="side-item" href="#store"><span class="ico">🛒</span><span>Nouveautés</span></a>
+            <a class="side-item"><span class="ico">🏆</span><span>Meilleures ventes</span></a>
+            <a class="side-item"><span class="ico">🎞️</span><span>Indépendant</span></a>
+            <a class="side-item"><span class="ico">🎓</span><span>Éducation</span></a>
+            <a class="side-item" href="#market"><span class="ico">♻️</span><span>Marché revente</span></a>
+            <a class="side-item" href="web-store.html" target="_blank" rel="noopener"><span class="ico">🌐</span><span>Store Web</span></a>
+
+            <div class="side-label">Profils</div>
+            <a class="side-item"><span class="ico">👶</span><span>Profil enfant</span></a>
+            <a class="side-item"><span class="ico">⚙</span><span>Paramètres</span></a>
+
+            <div class="side-user">
+                <div class="avatar">L</div>
+                <div class="u-info">
+                    <div class="u-name">Léon F.</div>
+                    <div class="u-meta">0xAB…E9</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main content -->
+        <main class="app-main">
+
+            <!-- Ambient glow orbs -->
+            <div class="ambient-glow g-1" aria-hidden="true"></div>
+            <div class="ambient-glow g-2" aria-hidden="true"></div>
+            <div class="ambient-glow g-3" aria-hidden="true"></div>
+
+            <!-- Hero banner (cinéma letterbox) -->
+            <section class="hero-banner" id="continue">
+                <img src="posters/_backdrop-dune.jpg" alt="" loading="eager" fetchpriority="high">
+                <div class="letter-bottom" aria-hidden="true"></div>
+
+                <!-- Film frame corners -->
+                <span class="frame-corner tl" aria-hidden="true"></span>
+                <span class="frame-corner tr" aria-hidden="true"></span>
+                <span class="frame-corner bl" aria-hidden="true"></span>
+                <span class="frame-corner br" aria-hidden="true"></span>
+
+                <!-- Technical annotations (cinema gate style) -->
+                <div class="tech-annot">
+                    <span>Tangible Player</span>
+                    <span>Feat.  001 / 127</span>
+                    <span>AES-256 · OFFLINE</span>
+                </div>
+                <div class="hero-annot-r">
+                    <span>DCP 21:9 · HDR10+</span>
+                    <span>Atmos · 7.1.4</span>
+                    <span>TC 00:54:12</span>
+                </div>
+
+                <div class="hero-badge">● Continuer · Reprise</div>
+
+                <div class="hero-content">
+                    <div class="hb-crumb">▶ En cours · 1 h 52 restant</div>
+                    <h1>Dune : <em>Part Two</em></h1>
+                    <div class="hero-genres">
+                        <span>Science-fiction</span>
+                        <span>Épique</span>
+                        <span>Drame</span>
+                    </div>
+                    <div class="hb-meta">
+                        <span><strong>4K</strong> HDR Dolby Vision</span>
+                        <span><strong>Atmos</strong></span>
+                        <span>Villeneuve · 2024 · 2 h 46</span>
+                        <span>⭐ 8.5 / 10</span>
+                    </div>
+                    <p class="hb-sub">Paul Atréides unit ses forces avec Chani et les Fremen alors qu'il cherche à se venger des conspirateurs qui ont détruit sa famille…</p>
+                    <div class="hb-actions">
+                        <button class="btn-play">▶ Reprendre à 00:54:12</button>
+                        <a href="film.html" class="btn-secondary">Infos détaillées</a>
+                        <div class="hb-progress">
+                            <span>32 %</span>
+                            <div class="p-bar"><div class="p-fill" style="width:32%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ PLAYER ZONE ═══ -->
+            <div class="section-intro">
+                <div style="flex:1; min-width:0;">
+                    <div class="cine-eyebrow is-green">00 · Player</div>
+                    <h2 class="cine-zone-title">Ma bibliothèque, <em>chiffrée et à vie.</em></h2>
+                </div>
+                <p class="cine-zone-sub">Fichiers locaux AES-256 · lecture offline · sync profils multi-appareils</p>
+            </div>
+
+            <!-- Continuer à regarder -->
+            <section class="row-section">
+                <div class="row-head">
+                    <h2><span class="row-number">01</span>Continuer <em>à regarder</em> <span class="count">3 films</span></h2>
+                    <span class="r-meta">REPRISE SYNC SUR TOUS VOS APPAREILS</span>
+                </div>
+                <div class="film-row">
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/dune2.jpg" alt="Dune : Part Two" loading="lazy">
+                            <span class="badge-q hdr">4K HDR</span>
+                            <div class="progress"><div class="progress-fill" style="width:68%"></div></div>
+                        </div>
+                        <div class="info">
+                            <div class="t">Dune : Part Two</div>
+                            <div class="m"><span>1 H 52 RESTANT</span></div>
+                        </div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/oppenheimer.jpg" alt="Oppenheimer" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <div class="progress"><div class="progress-fill" style="width:34%"></div></div>
+                        </div>
+                        <div class="info">
+                            <div class="t">Oppenheimer</div>
+                            <div class="m"><span>2 H 02 RESTANT</span></div>
+                        </div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/amelie.jpg" alt="Amélie Poulain" loading="lazy">
+                            <span class="badge-q">HD</span>
+                            <div class="progress"><div class="progress-fill" style="width:88%"></div></div>
+                        </div>
+                        <div class="info">
+                            <div class="t">Amélie Poulain</div>
+                            <div class="m"><span>15 MIN RESTANT</span></div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Ma collection -->
+            <section class="row-section" id="player">
+                <div class="row-head">
+                    <h2><span class="row-number">02</span>Ma <em>collection</em> <span class="count">127 films · 1.4 TB</span></h2>
+                    <span class="r-meta">AES-256-GCM · SQLCIPHER · HOT STORAGE</span>
+                </div>
+                <div class="film-row">
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/dune2.jpg" alt="Dune II" loading="lazy">
+                            <span class="badge-q hdr">4K HDR</span>
+                            <span class="badge-owned">✓ POSSÉDÉ</span>
+                        </div>
+                        <div class="info"><div class="t">Dune : Part Two</div><div class="m"><span>2024</span><span class="sep">·</span><span>Villeneuve</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/oppenheimer.jpg" alt="Oppenheimer" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <span class="badge-owned">✓ POSSÉDÉ</span>
+                        </div>
+                        <div class="info"><div class="t">Oppenheimer</div><div class="m"><span>2023</span><span class="sep">·</span><span>Nolan</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/matrix.jpg" alt="The Matrix" loading="lazy">
+                            <span class="badge-q hdr">4K HDR</span>
+                            <span class="badge-owned">✓ POSSÉDÉ</span>
+                        </div>
+                        <div class="info"><div class="t">The Matrix</div><div class="m"><span>1999</span><span class="sep">·</span><span>Wachowski</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/parasite.jpg" alt="Parasite" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <span class="badge-owned">✓ POSSÉDÉ</span>
+                        </div>
+                        <div class="info"><div class="t">Parasite</div><div class="m"><span>2019</span><span class="sep">·</span><span>Bong</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/amelie.jpg" alt="Amélie" loading="lazy">
+                            <span class="badge-q">HD</span>
+                            <span class="badge-owned">✓ POSSÉDÉ</span>
+                        </div>
+                        <div class="info"><div class="t">Amélie Poulain</div><div class="m"><span>2001</span><span class="sep">·</span><span>Jeunet</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/totoro.jpg" alt="Mon Voisin Totoro" loading="lazy">
+                            <span class="badge-q">HD</span>
+                            <span class="badge-owned">✓ POSSÉDÉ</span>
+                        </div>
+                        <div class="info"><div class="t">Mon Voisin Totoro</div><div class="m"><span>1988</span><span class="sep">·</span><span>Miyazaki</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/inception.jpg" alt="Inception" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <span class="badge-owned">✓ POSSÉDÉ</span>
+                        </div>
+                        <div class="info"><div class="t">Inception</div><div class="m"><span>2010</span><span class="sep">·</span><span>Nolan</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/interstellar.jpg" alt="Interstellar" loading="lazy">
+                            <span class="badge-q hdr">4K HDR</span>
+                            <span class="badge-owned">✓ POSSÉDÉ</span>
+                        </div>
+                        <div class="info"><div class="t">Interstellar</div><div class="m"><span>2014</span><span class="sep">·</span><span>Nolan</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/walle.jpg" alt="Wall-E" loading="lazy">
+                            <span class="badge-q">HD</span>
+                            <span class="badge-owned">✓ POSSÉDÉ</span>
+                        </div>
+                        <div class="info"><div class="t">Wall-E</div><div class="m"><span>2008</span><span class="sep">·</span><span>Stanton</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/pulpfiction.jpg" alt="Pulp Fiction" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <span class="badge-owned">✓ POSSÉDÉ</span>
+                        </div>
+                        <div class="info"><div class="t">Pulp Fiction</div><div class="m"><span>1994</span><span class="sep">·</span><span>Tarantino</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/chihiro.jpg" alt="Le Voyage de Chihiro" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <span class="badge-owned">✓ POSSÉDÉ</span>
+                        </div>
+                        <div class="info"><div class="t">Le Voyage de Chihiro</div><div class="m"><span>2001</span><span class="sep">·</span><span>Miyazaki</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/bladerunner2049.jpg" alt="Blade Runner 2049" loading="lazy">
+                            <span class="badge-q hdr">4K HDR</span>
+                            <span class="badge-owned">✓ POSSÉDÉ</span>
+                        </div>
+                        <div class="info"><div class="t">Blade Runner 2049</div><div class="m"><span>2017</span><span class="sep">·</span><span>Villeneuve</span></div></div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ═══ DIVIDER ═══ -->
+            <div class="zone-divider">
+                <span class="z-label">Store intégré</span>
+            </div>
+
+            <!-- ═══ STORE ZONE ═══ -->
+            <div class="section-intro" id="store">
+                <div style="flex:1; min-width:0;">
+                    <div class="cine-eyebrow">03 · Store</div>
+                    <h2 class="cine-zone-title">Découvrir, <em>acheter, posséder.</em></h2>
+                </div>
+                <p class="cine-zone-sub">Achat définitif · certificat on-chain · revendable à tout moment</p>
+            </div>
+
+            <div class="store-zone">
+            <!-- Nouveautés -->
+            <section class="row-section">
+                <div class="row-head">
+                    <h2><span class="row-number">04</span>Nouveautés <em>du Store</em> <span class="count">+42 cette semaine</span></h2>
+                    <span class="r-meta"><a href="web-store.html" target="_blank" rel="noopener">VOIR LE STORE WEB ↗</a></span>
+                </div>
+                <div class="film-row">
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/arrival.jpg" alt="Arrival" loading="lazy">
+                            <span class="badge-q hdr">4K HDR</span>
+                            <span class="badge-price">13 €</span>
+                        </div>
+                        <div class="info"><div class="t">Arrival</div><div class="m"><span>2016</span><span class="sep">·</span><span>Villeneuve</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/grandbudapest.jpg" alt="The Grand Budapest Hotel" loading="lazy">
+                            <span class="badge-q">HD</span>
+                            <span class="badge-price">9 €</span>
+                        </div>
+                        <div class="info"><div class="t">Grand Budapest Hotel</div><div class="m"><span>2014</span><span class="sep">·</span><span>W. Anderson</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/lostintranslation.jpg" alt="Lost in Translation" loading="lazy">
+                            <span class="badge-q">HD</span>
+                            <span class="badge-price">7 €</span>
+                        </div>
+                        <div class="info"><div class="t">Lost in Translation</div><div class="m"><span>2003</span><span class="sep">·</span><span>Coppola</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/drivemycar.jpg" alt="Drive My Car" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <span class="badge-price">11 €</span>
+                        </div>
+                        <div class="info"><div class="t">Drive My Car</div><div class="m"><span>2021</span><span class="sep">·</span><span>Hamaguchi</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/zoneofinterest.jpg" alt="The Zone of Interest" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <span class="badge-price">12 €</span>
+                        </div>
+                        <div class="info"><div class="t">The Zone of Interest</div><div class="m"><span>2023</span><span class="sep">·</span><span>Glazer</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/pastlives.jpg" alt="Past Lives" loading="lazy">
+                            <span class="badge-q">HD</span>
+                            <span class="badge-price">9 €</span>
+                        </div>
+                        <div class="info"><div class="t">Past Lives</div><div class="m"><span>2023</span><span class="sep">·</span><span>Song</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/anatomiechute.jpg" alt="Anatomie d'une chute" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <span class="badge-price">11 €</span>
+                        </div>
+                        <div class="info"><div class="t">Anatomie d'une chute</div><div class="m"><span>2023</span><span class="sep">·</span><span>Triet</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/eeaao.jpg" alt="Everything Everywhere All at Once" loading="lazy">
+                            <span class="badge-q hdr">4K HDR</span>
+                            <span class="badge-price">13 €</span>
+                        </div>
+                        <div class="info"><div class="t">Everything Everywhere</div><div class="m"><span>2022</span><span class="sep">·</span><span>Kwan · Scheinert</span></div></div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Indépendant FR -->
+            <section class="row-section">
+                <div class="row-head">
+                    <h2><span class="row-number">05</span>Indépendant <em>français</em> <span class="count">50 titres curés</span></h2>
+                    <span class="r-meta">ADAV · DIAPHANA · MEMENTO · LE PACTE</span>
+                </div>
+                <div class="film-row">
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/anatomiechute.jpg" alt="Anatomie d'une chute" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <span class="badge-price">11 €</span>
+                        </div>
+                        <div class="info"><div class="t">Anatomie d'une chute</div><div class="m"><span>2023</span><span class="sep">·</span><span>Triet</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/les400coups.jpg" alt="Les Quatre Cents Coups" loading="lazy">
+                            <span class="badge-q">HD</span>
+                            <span class="badge-price">6 €</span>
+                        </div>
+                        <div class="info"><div class="t">Les 400 Coups</div><div class="m"><span>1959</span><span class="sep">·</span><span>Truffaut</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/amelie.jpg" alt="Amélie" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <span class="badge-price">12 €</span>
+                        </div>
+                        <div class="info"><div class="t">Amélie Poulain</div><div class="m"><span>2001</span><span class="sep">·</span><span>Jeunet</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/portraitjeunefille.jpg" alt="Portrait de la jeune fille en feu" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <span class="badge-price">11 €</span>
+                        </div>
+                        <div class="info"><div class="t">Portrait de la jeune fille en feu</div><div class="m"><span>2019</span><span class="sep">·</span><span>Sciamma</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/titane.jpg" alt="Titane" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <span class="badge-price">11 €</span>
+                        </div>
+                        <div class="info"><div class="t">Titane</div><div class="m"><span>2021</span><span class="sep">·</span><span>Ducournau</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/lahaine.jpg" alt="La Haine" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <span class="badge-price">9 €</span>
+                        </div>
+                        <div class="info"><div class="t">La Haine</div><div class="m"><span>1995</span><span class="sep">·</span><span>Kassovitz</span></div></div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Marché revente -->
+            <section class="row-section" id="market">
+                <div class="row-head">
+                    <h2>♻ Marché <em>de revente</em> <span class="count">jusqu'à −44 %</span></h2>
+                    <span class="r-meta">15 % AUX AYANTS DROIT · SMART CONTRACTS POLYGON</span>
+                </div>
+                <div class="film-row">
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/dune2.jpg" alt="Dune II" loading="lazy">
+                            <span class="badge-q hdr">4K HDR</span>
+                            <span class="badge-price">8 €</span>
+                        </div>
+                        <div class="info"><div class="t">Dune : Part Two</div><div class="m"><span>3 EN VENTE</span><span class="sep">·</span><span style="color:var(--success)">−38 %</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/oppenheimer.jpg" alt="Oppenheimer" loading="lazy">
+                            <span class="badge-q">HD</span>
+                            <span class="badge-price">5 €</span>
+                        </div>
+                        <div class="info"><div class="t">Oppenheimer</div><div class="m"><span>7 EN VENTE</span><span class="sep">·</span><span style="color:var(--success)">−44 %</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/bladerunner2049.jpg" alt="Blade Runner 2049" loading="lazy">
+                            <span class="badge-q hdr">4K</span>
+                            <span class="badge-price">7 €</span>
+                        </div>
+                        <div class="info"><div class="t">Blade Runner 2049</div><div class="m"><span>2 EN VENTE</span><span class="sep">·</span><span style="color:var(--success)">−36 %</span></div></div>
+                    </a>
+                    <a class="film-card" href="film.html">
+                        <div class="poster">
+                            <img src="posters/interstellar.jpg" alt="Interstellar" loading="lazy">
+                            <span class="badge-q hdr">4K HDR</span>
+                            <span class="badge-price">8 €</span>
+                        </div>
+                        <div class="info"><div class="t">Interstellar</div><div class="m"><span>5 EN VENTE</span><span class="sep">·</span><span style="color:var(--success)">−33 %</span></div></div>
+                    </a>
+                </div>
+            </section>
+            </div><!-- /store-zone -->
+
+        </main>
+    </div>
+
+    <!-- Status bar -->
+    <div class="status-bar">
+        <div class="s-left">
+            <span class="s-ok">HORS-LIGNE OK</span>
+            <span class="s-sep"></span>
+            <span class="s-meta">127 films · 1.4 TB</span>
+            <span class="s-sep"></span>
+            <span class="s-meta">AES-256-GCM · SQLCIPHER</span>
+        </div>
+        <div class="s-right">
+            <span class="s-meta">Store intégré en ligne</span>
+            <span class="s-sep"></span>
+            <span class="s-meta">v1.0.0-beta.3</span>
+        </div>
+    </div>
+</div>
+
+<!-- Command palette FAB (modern pattern: search + shortcuts) -->
+<button class="cmd-fab" aria-label="Ouvrir la palette de commandes">
+    <span class="cmd-ico">⌘</span>
+    <span>Chercher, acheter, lire…</span>
+    <kbd>⌘</kbd><kbd>K</kbd>
+</button>
+
+</body>
+</html>

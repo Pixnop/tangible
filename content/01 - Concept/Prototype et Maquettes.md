@@ -7,8 +7,19 @@ priorité: haute
 
 # 🖼️ Prototype et Maquettes
 
+> [!success] Maquette HTML cliquable en ligne
+> Deux expériences produit + écrans détaillés, plein écran, vraies affiches via TMDB :
+> - **Player desktop** (avec Store intégré) → [tangible-app.eu/app/library.html](https://tangible-app.eu/app/library.html)
+> - **Store Web** (navigateur, sans installation) → [tangible-app.eu/app/web-store.html](https://tangible-app.eu/app/web-store.html)
+> - Page film détaillée (Dune : Part Two) → [tangible-app.eu/app/film.html](https://tangible-app.eu/app/film.html)
+> - Certificat de propriété on-chain → [tangible-app.eu/app/certificate.html](https://tangible-app.eu/app/certificate.html)
+>
+> Sources : `/app/library.html`, `/app/web-store.html`, `/app/film.html`, `/app/certificate.html` + CSS commun `/app/app.css`.
+>
+> Choix d'architecture : **le Player embarque le Store** dans sa sidebar (zone "Store intégré") pour que l'acte d'achat soit dans le même outil que l'acte de lecture. Le **Store Web** existe pour capter les utilisateurs non-équipés de l'app et servir de vitrine publique référençable par Google.
+
 > [!info]
-> Wireframes textuels pour les écrans clés de **Tangible Player** et **Tangible Store**. À traduire en maquettes Figma pour le pitch.
+> Wireframes textuels ci-dessous pour les écrans clés de **Tangible Player** et **Tangible Store**. Ont servi de base pour la maquette HTML ci-dessus et devront être complétés en maquettes Figma pour le pitch final.
 
 ## 📺 Écran 1 — Accueil Player (Bibliothèque)
 

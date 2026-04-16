@@ -81,9 +81,24 @@ python3 -m http.server 8000
    - **Source** : *GitHub Actions*
 4. À chaque push sur `main`, le workflow build + deploy automatiquement.
 
-Le site sera publié sur : `https://pixnop.github.io/tangible/`
+Le site sera publié sur : `https://tangible-app.eu/` (DNS à configurer sur OVH) avec fallback initial `https://pixnop.github.io/tangible/`.
 
-> ⚠️ Si ton nom GitHub est différent, modifie `baseUrl` dans `quartz.config.ts` (actuellement `pixnop.github.io/tangible/vault`) **avant** le premier push.
+### 🌐 Configuration du domaine `tangible-app.eu` (GitHub Pages)
+
+1. Dans GitHub → **Settings → Pages → Custom domain** : renseigner `tangible-app.eu` (crée automatiquement le fichier `CNAME`).
+2. Sur OVH → zone DNS de `tangible-app.eu`, ajouter :
+   - `A    @    185.199.108.153`
+   - `A    @    185.199.109.153`
+   - `A    @    185.199.110.153`
+   - `A    @    185.199.111.153`
+   - `CNAME    www    pixnop.github.io.`
+3. Cocher **Enforce HTTPS** une fois les DNS propagés (24-48 h max).
+4. URLs finales :
+   - Landing : `https://tangible-app.eu/`
+   - Pitch : `https://tangible-app.eu/pitch/`
+   - Vault : `https://tangible-app.eu/vault/`
+
+> ⚠️ Si ton nom GitHub est différent, modifie `baseUrl` dans `quartz.config.ts` (actuellement `tangible-app.eu/vault`) avant le premier push.
 
 ## 📚 Technologies
 

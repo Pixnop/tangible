@@ -13,7 +13,7 @@ const config: QuartzConfig = {
     enablePopovers: true,
     analytics: null,
     locale: "fr-FR",
-    baseUrl: "pixnop.github.io/tangible/vault",
+    baseUrl: "tangible-app.eu/vault",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     generateSocialImages: false,
