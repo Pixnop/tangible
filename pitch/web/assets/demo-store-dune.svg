@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" fill="none">
+  <rect width="1280" height="720" rx="28" fill="#FFF8F3"/>
+  <rect x="38" y="38" width="1204" height="62" rx="18" fill="#FFFFFF"/>
+  <text x="76" y="77" fill="#A44B22" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">Store</text>
+  <text x="1120" y="77" fill="#6E675D" font-family="Inter, Arial, sans-serif" font-size="18">Secure checkout</text>
+
+  <rect x="60" y="130" width="354" height="520" rx="28" fill="#D6A368"/>
+  <text x="124" y="382" fill="#FBF8F1" font-family="Fraunces, Georgia, serif" font-size="66" font-style="italic" font-weight="700">Dune</text>
+  <text x="110" y="434" fill="#FBF8F1" font-family="Inter, Arial, sans-serif" font-size="26">Part Two</text>
+  <text x="112" y="584" fill="#FBF8F1" font-family="Inter, Arial, sans-serif" font-size="18">4K HDR · Dolby Vision</text>
+
+  <text x="462" y="186" fill="#2B2F33" font-family="Fraunces, Georgia, serif" font-size="62" font-style="italic" font-weight="700">Dune: Part Two</text>
+  <text x="464" y="228" fill="#6E675D" font-family="Inter, Arial, sans-serif" font-size="24">Denis Villeneuve · 2024 · 2h46</text>
+  <text x="464" y="264" fill="#6E675D" font-family="Inter, Arial, sans-serif" font-size="22">8.5/10 · VO/VF · sous-titres · lecture locale</text>
+
+  <rect x="462" y="308" width="740" height="96" rx="24" fill="#FFFFFF"/>
+  <text x="494" y="350" fill="#2B2F33" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">Synopsis</text>
+  <text x="494" y="382" fill="#6E675D" font-family="Inter, Arial, sans-serif" font-size="19">Paul Atreides s'unit aux Fremen pendant qu'une guerre pour Arrakis s'intensifie.</text>
+
+  <text x="462" y="456" fill="#2B2F33" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">Format</text>
+  <rect x="462" y="478" width="132" height="52" rx="18" fill="#FFFFFF"/>
+  <text x="508" y="511" fill="#6E675D" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">SD</text>
+  <rect x="610" y="478" width="132" height="52" rx="18" fill="#FFFFFF"/>
+  <text x="657" y="511" fill="#6E675D" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600">HD</text>
+  <rect x="758" y="470" width="188" height="68" rx="22" fill="#E6733C"/>
+  <text x="825" y="512" fill="#FBF8F1" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">4K HDR</text>
+
+  <text x="462" y="588" fill="#2B2F33" font-family="Fraunces, Georgia, serif" font-size="58" font-weight="700">14,99 EUR</text>
+  <text x="802" y="590" fill="#6E675D" font-family="Inter, Arial, sans-serif" font-size="20">Certificat inclus</text>
+  <text x="802" y="620" fill="#6E675D" font-family="Inter, Arial, sans-serif" font-size="20">Revente autorisée</text>
+
+  <rect x="462" y="640" width="456" height="56" rx="28" fill="#2B2F33"/>
+  <text x="542" y="676" fill="#FBF8F1" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="700">ACHETER DÉFINITIVEMENT</text>
+  <rect x="942" y="640" width="260" height="56" rx="28" fill="#F6D6C7"/>
+  <text x="994" y="676" fill="#A44B22" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700">Ajouter à ma liste</text>
+</svg>
