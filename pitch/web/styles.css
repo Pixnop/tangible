@@ -2062,6 +2062,193 @@ button {
     line-height: 1.2;
 }
 
+/* ─── Slide 8 : Segment du marché visé (niche → expansion) ─── */
+.niche-layout {
+    position: absolute;
+    top: 290px;
+    left: 90px; right: 90px;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.niche-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    flex: 0 0 auto;
+}
+
+.niche-card {
+    position: relative;
+    padding: 26px 30px 24px;
+    background: linear-gradient(135deg, var(--paper) 0%, var(--ivory-deep) 100%);
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.niche-card--accent {
+    box-shadow: 0 18px 44px rgba(230, 115, 60, 0.22), var(--shadow-md);
+}
+.niche-stripe {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--flame-bright), var(--flame-deep));
+    box-shadow: 0 0 16px var(--flame-glow);
+    opacity: 0.7;
+}
+.niche-card--accent .niche-stripe { opacity: 1; }
+
+.niche-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+.niche-icon {
+    font-size: 36px;
+    line-height: 1;
+}
+.niche-card h3 {
+    font-family: var(--font-title);
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.1;
+    margin: 0;
+}
+
+.niche-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.niche-list li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+}
+.niche-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--flame);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 13px;
+}
+.niche-list b { color: var(--ink); font-weight: 700; }
+
+.niche-tag {
+    margin-top: auto;
+    padding-top: 8px;
+}
+.niche-tag .mono {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+}
+
+/* Justification */
+.niche-rationale {
+    padding: 18px 28px;
+    background: linear-gradient(135deg, var(--ink) 0%, var(--ink-deep) 100%);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    color: var(--ivory);
+}
+.niche-rationale .mono {
+    flex: 0 0 auto;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    font-weight: 700;
+}
+.niche-rationale p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.45;
+    color: rgba(251, 248, 241, 0.85);
+}
+
+/* Horizon timeline */
+.niche-horizon {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 14px;
+    align-items: stretch;
+}
+.horizon-step {
+    padding: 14px 20px 16px;
+    background: linear-gradient(135deg, var(--paper) 0%, var(--ivory-deep) 100%);
+    border-radius: var(--r-md);
+    box-shadow: var(--shadow-sm);
+    border-left: 3px solid rgba(230, 115, 60, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.horizon--now    { border-left-color: var(--flame); }
+.horizon--mid    { border-left-color: rgba(230, 115, 60, 0.6); }
+.horizon--future { border-left-color: var(--success); }
+
+.horizon-tag {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    color: var(--muted-dark);
+    text-transform: uppercase;
+}
+.horizon-step h4 {
+    font-family: var(--font-title);
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.1;
+}
+.horizon-step p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.35;
+}
+
+.horizon-arrow {
+    align-self: center;
+    font-family: var(--font-mono);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--flame);
+    opacity: 0.5;
+}
+
+/* Stagger entrance */
+.slide.active .niche-card,
+.slide.active .niche-rationale,
+.slide.active .horizon-step {
+    opacity: 0;
+    animation: rise-scale .6s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+.slide.active .niche-card:nth-child(1) { animation-delay: .50s; }
+.slide.active .niche-card:nth-child(2) { animation-delay: .65s; }
+.slide.active .niche-rationale         { animation-delay: .85s; }
+.slide.active .horizon-step:nth-child(1) { animation-delay: 1.05s; }
+.slide.active .horizon-step:nth-child(3) { animation-delay: 1.20s; }
+.slide.active .horizon-step:nth-child(5) { animation-delay: 1.35s; }
+
 /* ═══════════════════════════════════════════════════════════════
    SLIDE 8 — BUSINESS MODEL
    ═══════════════════════════════════════════════════════════════ */
