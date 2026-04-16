@@ -811,6 +811,20 @@ button {
     margin-bottom: 8px;
 }
 
+.ask-team {
+    position: absolute;
+    bottom: 48px;
+    left: 90px; right: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: rgba(251,248,241,0.35);
+}
+
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50%      { transform: translateY(-10px); }

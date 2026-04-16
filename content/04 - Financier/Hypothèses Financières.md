@@ -8,134 +8,94 @@ priorité: haute
 # 🧮 Hypothèses Financières
 
 > [!info]
-> Base d'argumentation chiffrée pour [[Compte de Résultat Prévisionnel]] et [[Plan de Trésorerie 3 ans]].
+> Base chiffrée pour [[Compte de Résultat Prévisionnel]] et [[Plan de Trésorerie 3 ans]].
+> Modèle révisé : 5 → 7 → 12 personnes · salaire brut 35 k€ · JEI + CIR
 
-## 📈 Croissance utilisateurs
+## 📈 Croissance utilisateurs & CA
 
-```mermaid
-xychart-beta
-    title "Utilisateurs actifs & CA (2026-2028)"
-    x-axis [2026, 2027, 2028]
-    y-axis "Utilisateurs (k)" 0 --> 200
-    bar [8, 45, 150]
-    line [8, 45, 150]
-```
-
-| Année | Utilisateurs actifs | Taux de conversion (site → achat) | ACV (achat annuel moyen) |
-|------:|--------------------:|:---------------------------------:|-------------------------:|
-| 2026 | 8 000 | 2 % | 25 € |
-| 2027 | 45 000 | 3 % | 35 € |
-| 2028 | 150 000 | 4 % | 45 € |
+| Année | Utilisateurs actifs | Dépense moyenne/an | CA Tangible |
+|------:|--------------------:|-------------------:|------------:|
+| 2026 | 5 000 | 30 € | 150 000 € |
+| 2027 | 25 000 | 40 € | 1 000 000 € |
+| 2028 | 70 000 | 50 € | 3 500 000 € |
 
 ### Justification
-- **2% Y1** : conservateur, cohérent avec conversions freemium SaaS early stage
-- **Croissance x5 Y2** : levier marketing + bouche-à-oreille communautaire + catalogue étoffé
-- **Croissance x3 Y3** : pénétration mainstream, signature studios majors
+- **5 000 users Y1** : phase de lancement, catalogue limité (50 films indé), peu de notoriété
+- **×5 users Y2** : bouche-à-oreille, catalogue élargi, ouverture mobile
+- **×3 users Y3** : pénétration grand public, premières signatures avec studios majors
+- **ACV croissant** : montée en gamme du catalogue + abonnement Pass + marché secondaire actif
 
-## 💰 ACV (Average Customer Value annuel)
+## 💰 Structure des revenus
 
-```mermaid
-pie title Décomposition ACV 2028 (45€/user/an)
-    "Achats définitifs": 28
-    "Tangible Pass": 12
-    "Revente (commission Tangible)": 3
-    "B2B API rétrocédé": 2
-```
+| Source | An N | An N+1 | An N+2 | Taux |
+|--------|-----:|-------:|-------:|------|
+| Commission vente Store | 127 k€ | 850 k€ | 2 975 k€ | 85 % du CA |
+| Tangible Pass (8 €/mois) | 15 k€ | 100 k€ | 350 k€ | 10 % du CA |
+| Marché secondaire (5 %) | 8 k€ | 50 k€ | 175 k€ | 5 % du CA |
+| **Total CA** | **150 k€** | **1 000 k€** | **3 500 k€** | 100 % |
 
-- Hypothèse **2 films/an/user** à prix moyen 14€ = 28€
-- **20%** des users souscrivent au Pass (moy 12€ attribuable)
-- **10%** des users actifs sur le marché de revente
+> [!note] Royalties studios = 70 % du CA An N, 65 % An N+1, 60 % An N+2 (négociations en volume)
 
-## 🏭 Coûts — détail
+## 👥 Équipe & masse salariale
 
-### Frais de personnel
+| Année | Effectif | Salaire brut moyen | Coût chargé (JEI) | Masse salariale |
+|------:|:--------:|-------------------:|------------------:|----------------:|
+| 2026 | 5 personnes | 35 000 € | 35 000 € | 175 000 € |
+| 2027 | 7 personnes (+2) | 35 000 € | 35 000 € | 245 000 € |
+| 2028 | ~12 personnes (+5) | 35 000 € | 35 000 € | ~420 000 € |
 
-```mermaid
-xychart-beta
-    title "Effectif (ETP) — rampup 3 ans"
-    x-axis [2026, 2027, 2028]
-    y-axis "ETP" 0 --> 30
-    bar [8, 15, 25]
-```
+> [!tip] **JEI (Jeune Entreprise Innovante)**
+> Exonération totale des cotisations patronales → coût chargé ≈ salaire brut.
+> Économie : 75 k€ An N · 105 k€ An N+1 · 180 k€ An N+2.
 
-| Année | ETP moyen | Masse salariale | Détail |
-|------:|----------:|----------------:|--------|
-| 2026 | 8 | 480 k€ | 2 fond. + 3 dev + 1 sec + 1 UX + 1 growth |
-| 2027 | 15 | 900 k€ | +2 dev, +mobile, +content, +support |
-| 2028 | 25 | 1 600 k€ | +10 ETP (int'l, B2B, ops, support) |
+**Composition équipe An N (5 personnes) :**
+2 fondateurs (dev + produit) · 1 développeur back · 1 designer/UX · 1 responsable partenariats studios
 
-### Marketing
+## 🏭 Charges détaillées
 
-| Année | Budget | Canaux clés |
-|------:|-------:|-------------|
-| 2026 | 150 k€ | YouTube cinéphile sponso, SEO, PR |
-| 2027 | 300 k€ | + ads ciblées, salons cinéma |
-| 2028 | 500 k€ | + TV connectée, international |
+| Poste | An N | An N+1 | An N+2 |
+|-------|-----:|-------:|-------:|
+| Royalties studios | 105 k€ | 650 k€ | 2 100 k€ |
+| Frais de personnel (JEI) | 175 k€ | 245 k€ | 420 k€ |
+| Publicité & marketing | 40 k€ | 100 k€ | 200 k€ |
+| Légal & conformité | 20 k€ | 30 k€ | 60 k€ |
+| Services & infra (VPS, IPFS, outils) | 12 k€ | 35 k€ | 200 k€ |
+| Ateliers & événements | 2 k€ | 15 k€ | 40 k€ |
+| Amortissements | 8 k€ | 25 k€ | 80 k€ |
+| **Total charges** | **369 k€** | **1 108 k€** | **3 110 k€** |
 
-### Infrastructure
+> [!note] Infra légère en An N : l'application tourne sur la machine du client (pas de CDN coûteux). Les 12 k€ couvrent VPS, nœuds IPFS et outils de développement.
 
-- Coût CDN fallback moyen : **0,01 €/GB** (P2P prend 80% du trafic à terme)
-- Poids moyen film téléchargé : 8 GB (4K avg)
-- Ratio P2P/CDN Y1 : 20/80 → Y3 : 80/20 (effet de réseau)
+## 🤝 Aides de l'état
 
-## 💳 Revenus — structure
+| Dispositif | An N | An N+1 | An N+2 | Principe |
+|-----------|-----:|-------:|-------:|---------|
+| **JEI** (exonération patronale) | 75 k€ | 105 k€ | 180 k€ | Économie sur charges patronales |
+| **CIR** (Crédit Impôt Recherche, 30 %) | 44 k€ | 63 k€ | 100 k€ | Remboursable même en perte |
+| **Total aides** | **119 k€** | **168 k€** | **280 k€** | |
 
-```mermaid
-pie title Mix revenus 2028 (6,7 M€)
-    "Vente initiale (65%)": 65
-    "Tangible Pass (18%)": 18
-    "Revente (8%)": 8
-    "B2B SDK (7%)": 7
-    "Services annexes (2%)": 2
-```
+## 🎯 Seuil de rentabilité
 
-## 🎯 Break-even
+- **Seuil opérationnel** : début An N+2 (2028)
+- **An N+1** : quasi à l'équilibre (déficit résiduel −45 k€, soit −4 k€/mois)
+- **Utilisateurs nécessaires** : ~25 000 actifs à 40 €/an moyen
 
-```mermaid
-xychart-beta
-    title "CA vs Charges (k€)"
-    x-axis [2026, 2027, 2028]
-    y-axis "k€" 0 --> 7000
-    bar [200, 1600, 6700]
-    line [926, 2405, 6330]
-```
+## 📊 Ratios clés
 
-- **Break-even utilisateur** : ~45 000 actifs
-- **Break-even opérationnel** : T1 2028
-
-## 📊 Ratios cibles
-
-| Ratio | 2026 | 2027 | 2028 | Benchmark |
-|-------|:----:|:----:|:----:|-----------|
-| Marge brute | 30% | 34% | 40% | Plateformes SaaS : 60-80% (contenu = marge + basse) |
-| Charges salariales / CA | 240% | 56% | 24% | Sain < 40% en cruise |
-| CAC / ACV | 9,4 | 2,2 | 0,7 | Sain < 3 |
-| LTV / CAC | 0,8 | 3,2 | 6,4 | Excellent > 3 |
-
-## 🧪 Tests de sensibilité
-
-### Scenario planning
-
-```mermaid
-graph LR
-    A[Hypothèse de base] --> B{Levier testé}
-    B -->|+30% users| C[CA 2028: 8,7M€]
-    B -->|-30% users| D[CA 2028: 4,7M€]
-    B -->|ACV +10€| E[CA 2028: 8,2M€]
-    B -->|Majors signés Y2| F[CA 2028: 10M€]
-    C --> G[Levée B avancée]
-    D --> H[Plan B: B2B focus]
-    F --> I[Rentabilité Y2]
-```
+| Indicateur | 2026 | 2027 | 2028 |
+|-----------|:----:|:----:|:----:|
+| Marge brute | 30 % | 35 % | 40 % |
+| Masse salariale / CA | 117 % | 25 % | 12 % |
+| Déficit mensuel | 14 k€ | 4 k€ | — |
+| CIR / charges totales | 12 % | 6 % | 3 % |
 
 ## ⚠️ Risques financiers
 
 | Risque | Probabilité | Impact | Mitigation |
 |--------|:-----------:|:------:|------------|
-| Refus studios majors | Haute | Fort | Démarrer indé + prouver traction |
-| Cyberattaque → perte de confiance | Moyenne | Critique | Audits + assurance cyber |
-| Échec de la levée série A | Moyenne | Fort | Slowdown opérationnel + bootstrap |
-| Concurrence GAFAM | Moyenne | Fort | Avance + communauté + OSS |
+| Refus studios majors | Haute | Fort | Démarrer avec films indépendants, prouver la traction |
+| Échec de la levée de croissance | Moyenne | Fort | Réduction équipe, focus B2B |
+| Concurrence grandes plateformes | Moyenne | Fort | Avance technologique + communauté + open source |
 | Cadre légal revente numérique | Faible | Moyen | Veille juridique + lobbying |
 
 ## 🔗 Liens
