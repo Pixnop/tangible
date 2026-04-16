@@ -1845,13 +1845,18 @@ button {
 
 .partners-grid {
     position: absolute;
-    top: 340px;
+    top: 320px;
     left: 90px; right: 90px;
-    bottom: 110px;
+    bottom: 100px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
-    gap: 24px;
+    grid-template-rows: 1fr 1fr auto;
+    gap: 20px;
+}
+/* 7e carte (Institutionnel) : row 3, centree, largeur 1 col */
+.partners-grid > article:nth-child(7) {
+    grid-column: 2;
+    grid-row: 3;
 }
 
 .partner-cat {
@@ -1995,6 +2000,7 @@ button {
 .slide.active .partners-grid > article:nth-child(4) { animation-delay: .74s; }
 .slide.active .partners-grid > article:nth-child(5) { animation-delay: .82s; }
 .slide.active .partners-grid > article:nth-child(6) { animation-delay: .90s; }
+.slide.active .partners-grid > article:nth-child(7) { animation-delay: .98s; }
 
 /* ═══════════════════════════════════════════════════════════════
    SLIDE 12 — ASK
