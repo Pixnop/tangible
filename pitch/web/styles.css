@@ -589,49 +589,59 @@ button {
 .corner-tl::before { top: 0; left: 0; width: 44px; height: 2px; }
 .corner-tl::after  { top: 0; left: 0; width: 2px; height: 44px; }
 
-/* ─── Glow / ambient ────────────────────────────────── */
+/* ─── Glow / ambient ──────────────────────────────────
+   Note: pas de filter:blur ici (Firefox rend mal avec
+   border-radius). On compte sur la transparence du
+   radial-gradient pour le fondu doux.
+   ─────────────────────────────────────────────────── */
 .glow {
     position: absolute;
     border-radius: 50%;
     pointer-events: none;
-    filter: blur(120px);
+    will-change: transform;
 }
 .glow-left {
     width: 900px; height: 900px;
     top: 10%; left: -100px;
     background: radial-gradient(circle, var(--flame-glow) 0%, transparent 60%);
+    border-radius: 50%;
     opacity: 0.8;
 }
 .glow-right {
     width: 600px; height: 600px;
     bottom: 0; right: 0;
     background: radial-gradient(circle, rgba(197, 88, 42, 0.35) 0%, transparent 60%);
+    border-radius: 50%;
     opacity: 0.7;
 }
 .glow-left-mid {
     width: 700px; height: 700px;
     top: 40%; left: 10%;
     background: radial-gradient(circle, var(--flame-glow) 0%, transparent 60%);
+    border-radius: 50%;
     opacity: 0.5;
 }
 .glow-left-big {
     width: 1100px; height: 1100px;
     top: 20%; left: -200px;
     background: radial-gradient(circle, var(--flame-glow) 0%, transparent 60%);
+    border-radius: 50%;
     opacity: 0.9;
 }
 .glow-center-top {
     width: 900px; height: 900px;
     top: 5%; left: 50%;
-    transform: translateX(-50%);
+    translate: -50% 0;
     background: radial-gradient(circle, var(--flame-glow) 0%, transparent 55%);
+    border-radius: 50%;
     opacity: 0.7;
 }
 .glow-center-bottom {
     width: 1000px; height: 1000px;
     bottom: -200px; left: 50%;
-    transform: translateX(-50%);
+    translate: -50% 0;
     background: radial-gradient(circle, rgba(230, 115, 60, 0.28) 0%, transparent 60%);
+    border-radius: 50%;
     opacity: 0.8;
 }
 
@@ -775,6 +785,16 @@ button {
 @keyframes pulse {
     0%, 100% { opacity: 0.7; transform: scale(1); }
     50%      { opacity: 1;   transform: scale(1.06); }
+}
+@keyframes orbitGlow {
+    0%   { transform: translate(0, 0) scale(1);   opacity: 0.7; }
+    33%  { transform: translate(20px, -10px) scale(1.08); opacity: 1; }
+    66%  { transform: translate(-15px, 18px) scale(.95); opacity: .85; }
+    100% { transform: translate(0, 0) scale(1);   opacity: 0.7; }
+}
+@keyframes askHaloPulse {
+    0%, 100% { transform: scale(1);    opacity: 0.7; }
+    50%      { transform: scale(1.18); opacity: 1; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -1067,10 +1087,12 @@ button {
 .mock-feature::before {
     content: "";
     position: absolute;
-    top: 0; right: 0;
-    width: 200px; height: 200px;
-    background: radial-gradient(circle, var(--flame-glow) 0%, transparent 60%);
-    filter: blur(40px);
+    top: -40px; right: -40px;
+    width: 240px; height: 240px;
+    background: radial-gradient(circle, rgba(230, 115, 60, 0.55) 0%, transparent 65%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: orbitGlow 14s ease-in-out infinite;
 }
 .mock-tag {
     display: inline-block;
@@ -1615,9 +1637,11 @@ button {
     content: "";
     position: absolute;
     top: -80px; right: -80px;
-    width: 240px; height: 240px;
-    background: radial-gradient(circle, var(--flame-glow) 0%, transparent 70%);
-    filter: blur(40px);
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(230, 115, 60, 0.5) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: orbitGlow 12s ease-in-out infinite reverse;
     pointer-events: none;
 }
 
@@ -1988,37 +2012,50 @@ button {
 
 .finance-grid {
     position: absolute;
-    top: 340px;
+    top: 320px;
     left: 90px; right: 90px;
-    bottom: 80px;
+    bottom: 130px;
     display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 36px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 24px;
+    align-items: stretch;
 }
+/* Chart card prend toute la largeur (centre sur la page) */
+.finance-grid > .chart-card { max-width: 1100px; margin: 0 auto; width: 100%; }
+.finance-grid > .ask-card  { max-width: 1100px; margin: 0 auto; width: 100%; }
 
 .chart-card {
     position: relative;
-    padding: 40px 44px;
+    padding: 32px 40px;
     background: linear-gradient(135deg, var(--paper) 0%, var(--ivory-deep) 100%);
     border-radius: var(--r-xl);
     box-shadow: var(--shadow-lg);
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
-.chart-card .mono.muted { font-size: 14px; letter-spacing: 0.2em; font-weight: 700; }
+.chart-card .mono.muted {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    text-align: center;
+}
 .chart-hero {
     font-family: var(--font-title);
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 700;
     color: var(--flame-deep);
-    margin-top: 8px;
-    margin-bottom: 32px;
+    margin-top: 6px;
+    margin-bottom: 24px;
+    text-align: center;
 }
-.chart-hero em { color: var(--flame); }
+.chart-hero em { color: var(--flame); font-style: italic; }
 
 .chart {
     position: relative;
-    flex: 1;
+    height: 280px;
+    max-height: 320px;
     display: grid;
     grid-template-columns: 50px 1fr;
     gap: 16px;
@@ -2115,14 +2152,21 @@ button {
 
 .ask-card {
     position: relative;
-    padding: 44px;
+    padding: 24px 36px;
     background: linear-gradient(135deg, var(--ink) 0%, var(--ink-deep) 100%);
     color: var(--ivory);
     border-radius: var(--r-xl);
     box-shadow: var(--shadow-xl);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto 1px 1fr 1px auto;
+    align-items: center;
+    gap: 32px;
+}
+.ask-card > .ask-divider {
+    width: 1px;
+    height: 70%;
+    background: rgba(255, 255, 255, 0.12);
 }
 .ask-ribbon {
     position: absolute;
@@ -2133,11 +2177,13 @@ button {
 }
 .ask-halo {
     position: absolute;
-    width: 400px; height: 400px;
-    top: -100px; left: 50%;
-    transform: translateX(-50%);
-    background: radial-gradient(circle, var(--flame-glow) 0%, transparent 60%);
-    filter: blur(60px);
+    width: 460px; height: 460px;
+    top: -120px; left: 50%;
+    translate: -50% 0;
+    background: radial-gradient(circle, rgba(230, 115, 60, 0.5) 0%, transparent 65%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: askHaloPulse 6s ease-in-out infinite;
     pointer-events: none;
 }
 .ask-card .mono.flame {
@@ -2150,35 +2196,34 @@ button {
 }
 .ask-big {
     font-family: var(--font-title);
-    font-size: 136px;
+    font-size: 76px;
     font-weight: 900;
     color: var(--ivory);
     line-height: 1;
     position: relative;
-    text-shadow: 0 0 40px var(--flame-glow);
+    text-shadow: 0 0 30px var(--flame-glow);
+    white-space: nowrap;
 }
-.ask-big span { font-size: 40px; color: var(--flame); }
+.ask-big span { font-size: 26px; color: var(--flame); }
 .ask-sub {
-    font-size: 18px;
+    font-size: 14px;
     color: var(--muted-light);
-    margin-top: 16px;
+    margin-top: 6px;
     position: relative;
 }
-.ask-line {
-    width: 64px; height: 2px;
-    background: var(--flame);
-    margin: 24px 0;
-    box-shadow: 0 0 12px var(--flame-glow);
-    position: relative;
-}
+.ask-line { display: none; }
 .ask-usage {
     list-style: none;
     font-family: var(--font-body);
-    font-size: 18px;
+    font-size: 13px;
     color: var(--ivory);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    white-space: nowrap;
 }
-.ask-usage li { padding: 6px 0; }
+.ask-usage li { padding: 0; }
 
 /* ═══════════════════════════════════════════════════════════════
    SLIDE 10 — ÉQUIPE & ROADMAP
@@ -2276,6 +2321,7 @@ button {
     background: var(--ink);
     z-index: 1;
     position: relative;
+    overflow: hidden;
 }
 .tl-row--active .tl-dot {
     background: radial-gradient(circle, var(--flame-bright), var(--flame-deep));
@@ -2721,13 +2767,14 @@ button {
 
 .pie-grid {
     position: absolute;
-    top: 295px;
+    top: 280px;
     left: 90px; right: 90px;
-    bottom: 80px;
+    bottom: 110px;
     display: grid;
     grid-template-columns: 1fr 1.15fr;
     gap: 60px;
     align-items: center;
+    align-content: center;
 }
 
 .pie-wrap {
@@ -2735,15 +2782,22 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height: auto;
+    align-self: center;
 }
 
+.pie-wrap { overflow: visible; }
 .pie-ring {
     width: 420px;
     height: 420px;
     border-radius: 50%;
-    box-shadow: var(--shadow-xl);
     flex-shrink: 0;
+    /* Firefox-safe clip : evite que le conic-gradient deborde */
+    -webkit-mask: radial-gradient(circle, #000 99%, transparent 100%);
+            mask: radial-gradient(circle, #000 99%, transparent 100%);
+    clip-path: circle(50% at 50% 50%);
+    /* Shadow via filter:drop-shadow (suit la forme clippée), pas box-shadow */
+    filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.28));
 }
 
 .pie-center {
