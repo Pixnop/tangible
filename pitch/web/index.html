@@ -676,81 +676,99 @@
         <div class="be-wrap">
             <svg class="be-svg" viewBox="0 0 1500 560" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
 
-                <!-- Zones fond -->
-                <rect x="0" y="0" width="1500" height="290" fill="rgba(58,165,116,0.04)"/>
-                <rect x="0" y="290" width="1500" height="270" fill="rgba(209,74,61,0.05)"/>
+                <defs>
+                    <linearGradient id="bar-red" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%"   stop-color="#D14A3D" stop-opacity="0.45"/>
+                        <stop offset="100%" stop-color="#D14A3D" stop-opacity="0.08"/>
+                    </linearGradient>
+                    <linearGradient id="bar-green" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%"   stop-color="#3AA574" stop-opacity="0.60"/>
+                        <stop offset="100%" stop-color="#3AA574" stop-opacity="0.15"/>
+                    </linearGradient>
+                </defs>
 
-                <!-- Lignes de grille horizontales -->
-                <line x1="80" y1="80"  x2="1460" y2="80"  stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-                <line x1="80" y1="180" x2="1460" y2="180" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-                <line x1="80" y1="360" x2="1460" y2="360" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                <!--
+                  Échelle Y :
+                    y =  80  -> +400 k€
+                    y = 300  ->    0 €  (SEUIL)
+                    y = 410  -> −200 k€
+                    Scale : 0.55 px / k€
+                -->
 
-                <!-- Ligne zéro -->
-                <line x1="80" y1="290" x2="1460" y2="290" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-dasharray="10,7"/>
-                <text x="88" y="283" font-family="'JetBrains Mono',monospace" font-size="13" font-weight="700" fill="rgba(255,255,255,0.32)" letter-spacing="2">SEUIL  0 €</text>
+                <!-- Y labels -->
+                <text x="78" y="86"  text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="13" fill="rgba(58,165,116,0.65)" font-weight="700" letter-spacing="0.5">+400 k€</text>
+                <text x="78" y="196" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="11" fill="rgba(255,255,255,0.22)">+200 k€</text>
+                <text x="78" y="416" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="11" fill="rgba(209,74,61,0.5)">−200 k€</text>
 
-                <!-- Étiquettes axe Y -->
-                <text x="68" y="294" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="12" fill="rgba(255,255,255,0.25)">0</text>
-                <text x="68" y="103" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="12" fill="rgba(58,165,116,0.5)">+300k</text>
-                <text x="68" y="213" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="12" fill="rgba(58,165,116,0.35)">+100k</text>
-                <text x="68" y="355" text-anchor="end" font-family="'JetBrains Mono',monospace" font-size="12" fill="rgba(209,74,61,0.45)">−100k</text>
+                <!-- Gridlines -->
+                <line x1="100" y1="190" x2="1400" y2="190" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4,8"/>
+                <line x1="100" y1="410" x2="1400" y2="410" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4,8"/>
 
-                <!-- Barre Première Année (−173 k€) - centre x=360 -->
-                <rect x="290" y="290" width="140" height="130" rx="4" fill="rgba(209,74,61,0.25)"/>
-                <rect x="290" y="290" width="140" height="3" fill="#D14A3D" opacity="0.9"/>
-                <text x="360" y="278" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="28" font-weight="900" fill="#D14A3D">−173 k€</text>
+                <!-- 0 SEUIL line -->
+                <line x1="100" y1="300" x2="1400" y2="300" stroke="rgba(255,255,255,0.32)" stroke-width="2" stroke-dasharray="14,8"/>
+                <text x="108" y="293" font-family="'JetBrains Mono',monospace" font-size="13" font-weight="700" fill="rgba(255,255,255,0.5)" letter-spacing="2.5">SEUIL · 0 €</text>
 
-                <!-- Barre Première Année (−45 k€) quasi break-even - centre x=750 -->
-                <rect x="680" y="290" width="140" height="50" rx="4" fill="rgba(209,74,61,0.18)"/>
-                <rect x="680" y="290" width="140" height="3" fill="#D14A3D" opacity="0.7"/>
-                <text x="750" y="278" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="28" font-weight="900" fill="#D14A3D">−45 k€</text>
+                <!-- ───── BAR An 1 : −173 k€ ───── -->
+                <rect class="be-bar be-bar--neg be-bar--1" x="230" y="300" width="180" height="95" rx="6" fill="url(#bar-red)"/>
+                <rect class="be-bar-cap be-bar-cap--1" x="230" y="395" width="180" height="4" rx="2" fill="#D14A3D"/>
+                <text class="be-num be-num--1" x="320" y="438" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="42" font-weight="900" fill="#D14A3D">−173 k€</text>
 
-                <!-- Barre Première Année (+367 k€) - centre x=1140 -->
-                <rect x="1070" y="90" width="140" height="200" rx="4" fill="rgba(58,165,116,0.32)"/>
-                <rect x="1070" y="286" width="140" height="4" fill="#3AA574"/>
-                <text x="1140" y="78" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="28" font-weight="900" fill="#3AA574">+367 k€</text>
+                <!-- ───── BAR An 2 : −45 k€ ───── -->
+                <rect class="be-bar be-bar--neg be-bar--2" x="660" y="300" width="180" height="36" rx="6" fill="url(#bar-red)" opacity="0.78"/>
+                <rect class="be-bar-cap be-bar-cap--2" x="660" y="336" width="180" height="4" rx="2" fill="#D14A3D" opacity="0.78"/>
+                <text class="be-num be-num--2" x="750" y="378" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="38" font-weight="900" fill="#D14A3D">−45 k€</text>
 
-                <!-- Aire sous/au-dessus de la courbe -->
-                <path d="M 360,420 C 520,415 680,340 750,340 C 820,340 870,292 800,290 L 800,290 L 750,290 L 360,290 Z" fill="rgba(209,74,61,0.1)"/>
-                <path d="M 800,290 C 870,288 960,230 1020,190 C 1080,155 1110,120 1140,90 L 1140,290 Z" fill="rgba(58,165,116,0.1)"/>
+                <!-- ───── BAR An 3 : +367 k€ ───── -->
+                <rect class="be-bar be-bar--pos be-bar--3" x="1090" y="98" width="180" height="202" rx="6" fill="url(#bar-green)"/>
+                <rect class="be-bar-cap be-bar-cap--3" x="1090" y="98" width="180" height="4" rx="2" fill="#3AA574"/>
+                <text class="be-num be-num--3" x="1180" y="78" text-anchor="middle" font-family="'Fraunces',Georgia,serif" font-size="46" font-weight="900" fill="#3AA574">+367 k€</text>
 
-                <!-- Courbe résultat -->
-                <path class="be-curve-red" d="M 360,420 C 520,415 680,345 750,340 C 790,337 800,292 800,290" stroke="#D14A3D" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-                <path class="be-curve-green" d="M 800,290 C 870,285 960,225 1020,185 C 1075,150 1110,118 1140,90" stroke="#3AA574" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                <!-- ───── Courbe trajectoire (par-dessus les barres) ─────
+                  Points data : An1(320,395) - An2(750,325) - An3(1180,98)
+                  Seuil de rentabilité visuel : x=940, y=300
+                -->
+                <path class="be-curve be-curve-red"
+                      d="M 320,395 C 510,392 580,360 750,325 C 830,318 890,308 940,300"
+                      stroke="#D14A3D" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
 
-                <!-- Points sur la courbe -->
-                <circle cx="360"  cy="420" r="8" fill="#D14A3D" stroke="rgba(21,23,27,0.9)" stroke-width="2.5"/>
-                <circle cx="750"  cy="340" r="8" fill="#D14A3D" stroke="rgba(21,23,27,0.9)" stroke-width="2.5"/>
-                <circle cx="1140" cy="90"  r="9" fill="#3AA574" stroke="rgba(21,23,27,0.9)" stroke-width="2.5"/>
+                <path class="be-curve be-curve-green"
+                      d="M 940,300 C 1010,290 1080,150 1180,98"
+                      stroke="#3AA574" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
 
-                <!-- Marqueur seuil atteint (croisement Première Année → Première Année, x≈800) -->
-                <circle cx="800" cy="290" r="9" fill="#E6733C" stroke="rgba(21,23,27,0.9)" stroke-width="2.5"/>
-                <line x1="800" y1="228" x2="800" y2="281" stroke="#E6733C" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.7"/>
-                <rect x="716" y="192" width="168" height="36" rx="18" fill="rgba(230,115,60,0.18)" stroke="#E6733C" stroke-width="1.2"/>
-                <text x="800" y="215" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="14" font-weight="700" fill="#E6733C" letter-spacing="1">SEUIL ATTEINT</text>
+                <!-- Points sur courbe (discrets, posés sur les barres) -->
+                <circle class="be-dot be-dot--1" cx="320"  cy="395" r="7" fill="#D14A3D" stroke="rgba(21,23,27,0.95)" stroke-width="2.5"/>
+                <circle class="be-dot be-dot--2" cx="750"  cy="325" r="7" fill="#D14A3D" stroke="rgba(21,23,27,0.95)" stroke-width="2.5"/>
+                <circle class="be-dot be-dot--3" cx="1180" cy="98"  r="8" fill="#3AA574" stroke="rgba(21,23,27,0.95)" stroke-width="2.5"/>
 
-                <!-- Étiquettes années -->
-                <text x="360" y="500" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="15" font-weight="700" fill="#E6733C" letter-spacing="1">Première Année</text>
-                <text x="360" y="520" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" fill="rgba(255,255,255,0.38)">150 k€ CA · déficit 14 k€/mois</text>
+                <!-- ───── SEUIL DE RENTABILITÉ ───── -->
+                <line class="be-seuil-line" x1="940" y1="180" x2="940" y2="290" stroke="#E6733C" stroke-width="1.4" stroke-dasharray="4,4" opacity="0.7"/>
+                <rect class="be-seuil-badge" x="820" y="142" width="240" height="34" rx="17" fill="rgba(230,115,60,0.22)" stroke="#E6733C" stroke-width="1.4"/>
+                <text class="be-seuil-text" x="940" y="164" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" font-weight="700" fill="#E6733C" letter-spacing="1.5">▲ SEUIL DE RENTABILITÉ</text>
+                <circle class="be-seuil-halo" cx="940" cy="300" r="14" fill="none" stroke="#E6733C" stroke-width="2" opacity="0"/>
+                <circle class="be-seuil-dot" cx="940" cy="300" r="10" fill="#E6733C" stroke="rgba(21,23,27,0.95)" stroke-width="3"/>
+                <circle class="be-seuil-core" cx="940" cy="300" r="4" fill="rgba(255,255,255,0.95)"/>
 
-                <text x="750" y="500" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="15" font-weight="700" fill="#E6733C" letter-spacing="1">Deuxième Année</text>
-                <text x="750" y="520" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" fill="rgba(255,255,255,0.38)">1,0 M€ CA · déficit 4 k€/mois</text>
+                <!-- ───── Étiquettes années ───── -->
+                <text x="320" y="478" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="17" font-weight="800" fill="#E6733C" letter-spacing="2">An 1 · 2026</text>
+                <text x="320" y="503" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" fill="rgba(255,255,255,0.5)">150 k€ CA</text>
+                <text x="320" y="525" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" fill="rgba(255,255,255,0.32)">burn 14 k€/mois</text>
 
-                <text x="1140" y="500" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="15" font-weight="700" fill="#3AA574" letter-spacing="1">Troisième Année</text>
-                <text x="1140" y="520" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" fill="rgba(255,255,255,0.38)">3,5 M€ CA · IS 123 k€</text>
+                <text x="750" y="478" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="17" font-weight="800" fill="#E6733C" letter-spacing="2">An 2 · 2027</text>
+                <text x="750" y="503" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" fill="rgba(255,255,255,0.5)">1,0 M€ CA</text>
+                <text x="750" y="525" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" fill="rgba(255,255,255,0.32)">burn 4 k€/mois</text>
 
-                <!-- Badge remboursement prêt -->
-                <rect x="1034" y="530" width="212" height="26" rx="13" fill="rgba(58,165,116,0.15)" stroke="#3AA574" stroke-width="1.2"/>
-                <text x="1140" y="547" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" font-weight="700" fill="#3AA574" letter-spacing="1">↑ REMB. PRÊT 450 k€</text>
+                <text x="1180" y="478" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="17" font-weight="800" fill="#3AA574" letter-spacing="2">An 3 · 2028  ✓</text>
+                <text x="1180" y="503" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" fill="rgba(255,255,255,0.5)">3,5 M€ CA · IS 123 k€</text>
+                <text x="1180" y="525" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" fill="rgba(58,165,116,0.55)">remb. prêt 450 k€</text>
             </svg>
         </div>
     </div>
 </section>
 
 <!-- ─────────────────────────────────────────────
-     SLIDE 13 — PARTENAIRES
+     SLIDE 13 — PROJECTION 3 ANS
 ─────────────────────────────────────────────── -->
-<section class="slide slide--partners" data-slide="13" data-bg="light">
+<section class="slide slide--projection" data-slide="13" data-bg="light">
     <div class="slide-inner">
         <div class="corner-mark corner-tr"></div>
         <p class="eyebrow"><span class="eyebrow-bar"></span>FINANCIER · TRAJECTOIRE</p>
@@ -832,9 +850,191 @@
 </section>
 
 <!-- ─────────────────────────────────────────────
-     SLIDE 14 — ASK
+     SLIDE 14 — PARTENAIRES
 ─────────────────────────────────────────────── -->
-<section class="slide slide--ask" data-slide="14" data-bg="dark">
+<section class="slide slide--partners" data-slide="14" data-bg="light">
+    <div class="slide-inner">
+        <div class="corner-mark corner-tr"></div>
+        <p class="eyebrow"><span class="eyebrow-bar"></span>NOS PARTENAIRES</p>
+        <h1 class="title">Un <em>écosystème.</em> Pas un silo.</h1>
+        <div class="title-underline"></div>
+
+        <div class="partners-grid">
+            <article class="partner-cat">
+                <div class="cat-header">
+                    <span class="cat-icon">🎬</span>
+                    <h3>Studios &amp; contenu</h3>
+                </div>
+                <div class="partner-logos">
+                    <div class="partner-chip">
+                        <img src="assets/partners/mk2.svg" alt="mk2">
+                        <span class="chip-name">mk2</span>
+                    </div>
+                    <div class="partner-chip">
+                        <img src="assets/partners/arp.svg" alt="ARP">
+                        <span class="chip-name">ARP</span>
+                    </div>
+                    <div class="partner-chip">
+                        <img src="assets/partners/gaumont.svg" alt="Gaumont">
+                        <span class="chip-name">Gaumont</span>
+                    </div>
+                    <div class="partner-chip">
+                        <img src="assets/partners/francetv.svg" alt="France TV">
+                        <span class="chip-name">France TV</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="partner-cat">
+                <div class="cat-header">
+                    <span class="cat-icon">🗂️</span>
+                    <h3>Métadonnées</h3>
+                </div>
+                <div class="partner-logos">
+                    <div class="partner-chip">
+                        <img src="assets/partners/tmdb.svg" alt="TMDB">
+                        <span class="chip-name">TMDB</span>
+                    </div>
+                    <div class="partner-chip">
+                        <img src="assets/partners/imdb.svg" alt="IMDB">
+                        <span class="chip-name">IMDB</span>
+                    </div>
+                    <div class="partner-chip">
+                        <img src="assets/partners/letterboxd.svg" alt="Letterboxd">
+                        <span class="chip-name">Letterboxd</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="partner-cat">
+                <div class="cat-header">
+                    <span class="cat-icon">🌐</span>
+                    <h3>Infrastructure</h3>
+                </div>
+                <div class="partner-logos">
+                    <div class="partner-chip">
+                        <img src="assets/partners/cloudflare.svg" alt="Cloudflare">
+                        <span class="chip-name">Cloudflare</span>
+                    </div>
+                    <div class="partner-chip">
+                        <img src="assets/partners/ipfs.svg" alt="IPFS">
+                        <span class="chip-name">IPFS</span>
+                    </div>
+                    <div class="partner-chip">
+                        <img src="assets/partners/seeders.svg" alt="Seeders P2P">
+                        <span class="chip-name">Seeders P2P</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="partner-cat">
+                <div class="cat-header">
+                    <span class="cat-icon">💳</span>
+                    <h3>Paiement</h3>
+                </div>
+                <div class="partner-logos">
+                    <div class="partner-chip">
+                        <img src="assets/partners/stripe.svg" alt="Stripe">
+                        <span class="chip-name">Stripe</span>
+                    </div>
+                    <div class="partner-chip">
+                        <img src="assets/partners/lemonway.svg" alt="Lemonway">
+                        <span class="chip-name">Lemonway</span>
+                    </div>
+                    <div class="partner-chip">
+                        <img src="assets/partners/bitcoin.svg" alt="Bitcoin">
+                        <span class="chip-name">Bitcoin</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="partner-cat">
+                <div class="cat-header">
+                    <span class="cat-icon">⛓️</span>
+                    <h3>Blockchain</h3>
+                </div>
+                <div class="partner-logos">
+                    <div class="partner-chip">
+                        <img src="assets/partners/polygon.svg" alt="Polygon">
+                        <span class="chip-name">Polygon</span>
+                    </div>
+                    <div class="partner-chip">
+                        <img src="assets/partners/chainlink.svg" alt="Chainlink">
+                        <span class="chip-name">Chainlink</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="partner-cat partner-cat--accent">
+                <div class="cat-header">
+                    <span class="cat-icon">🛡️</span>
+                    <h3>Sécurité</h3>
+                </div>
+                <div class="partner-logos">
+                    <div class="partner-chip">
+                        <img src="assets/partners/quarkslab.svg" alt="Quarkslab">
+                        <span class="chip-name">Quarkslab</span>
+                    </div>
+                    <div class="partner-chip">
+                        <img src="assets/partners/yeswehack.svg" alt="YesWeHack">
+                        <span class="chip-name">YesWeHack</span>
+                    </div>
+                    <div class="partner-chip partner-chip--target">
+                        <img src="assets/partners/anssi.svg" alt="ANSSI">
+                        <span class="chip-name">ANSSI</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="partner-cat">
+                <div class="cat-header">
+                    <span class="cat-icon">🎓</span>
+                    <h3>Institutionnel</h3>
+                </div>
+                <div class="partner-logos">
+                    <div class="partner-chip">
+                        <img src="assets/partners/iut-montpellier.svg" alt="IUT Montpellier">
+                        <span class="chip-name">IUT Montpellier</span>
+                    </div>
+                    <div class="partner-chip partner-chip--target">
+                        <img src="assets/partners/bpi.svg" alt="BPI France">
+                        <span class="chip-name">BPI France</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="partner-cat">
+                <div class="cat-header">
+                    <span class="cat-icon">📚</span>
+                    <h3>Média public &amp; pédagogie</h3>
+                </div>
+                <div class="partner-logos">
+                    <div class="partner-chip">
+                        <img src="assets/partners/arte.svg" alt="ARTE">
+                        <span class="chip-name">ARTE</span>
+                    </div>
+                    <div class="partner-chip">
+                        <img src="assets/partners/ina.svg" alt="INA">
+                        <span class="chip-name">INA</span>
+                    </div>
+                    <div class="partner-chip">
+                        <img src="assets/partners/canope.svg" alt="Canopé">
+                        <span class="chip-name">Canopé</span>
+                    </div>
+                    <div class="partner-chip partner-chip--target">
+                        <img src="assets/partners/cnc.svg" alt="CNC">
+                        <span class="chip-name">CNC</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     SLIDE 15 — ASK
+─────────────────────────────────────────────── -->
+<section class="slide slide--ask" data-slide="15" data-bg="dark">
     <div class="slide-inner">
         <div class="glow glow-left-big"></div>
         <div class="bg-number">950</div>
@@ -888,9 +1088,9 @@
 </section>
 
 <!-- ─────────────────────────────────────────────
-     SLIDE 15 — CLOSING
+     SLIDE 16 — CLOSING
 ─────────────────────────────────────────────── -->
-<section class="slide slide--closing" data-slide="15" data-bg="dark">
+<section class="slide slide--closing" data-slide="16" data-bg="dark">
     <div class="slide-inner">
         <div class="glow glow-center-top"></div>
         <div class="glow glow-center-bottom"></div>
