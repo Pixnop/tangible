@@ -3043,6 +3043,24 @@ button {
     animation: rise-scale .8s .4s cubic-bezier(.22, 1, .36, 1) both;
 }
 
+.be-curve-red {
+    stroke-dasharray: 510;
+    stroke-dashoffset: 510;
+}
+.be-curve-green {
+    stroke-dasharray: 420;
+    stroke-dashoffset: 420;
+}
+.slide.active .be-curve-red {
+    animation: draw-path .9s .9s cubic-bezier(.4, 0, .2, 1) forwards;
+}
+.slide.active .be-curve-green {
+    animation: draw-path 1.2s 1.6s cubic-bezier(.4, 0, .2, 1) forwards;
+}
+@keyframes draw-path {
+    to { stroke-dashoffset: 0; }
+}
+
 .fin-summary-grid {
     position: absolute;
     top: 340px;
