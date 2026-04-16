@@ -303,8 +303,30 @@ b, strong { font-weight: 700; }
     z-index: 5;
     display: grid;
     grid-template-columns: 1fr 1px 1fr;
+    align-items: stretch;
     gap: 6mm;
     margin-bottom: 2.5mm;
+}
+
+.ps-col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Watermark logo pleine page — deborde du cote droit, en biais */
+.poster-watermark {
+    position: absolute;
+    right: -140mm;
+    top: 50%;
+    transform: translateY(-50%) rotate(-18deg);
+    width: 400mm;
+    height: auto;
+    opacity: 0.018;
+    filter: grayscale(1) brightness(3);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .ps-divider {
@@ -315,10 +337,10 @@ b, strong { font-weight: 700; }
 .ps-title {
     font-family: var(--font-title);
     font-weight: 500;
-    font-size: 17pt;
+    font-size: 22pt;
     line-height: 1.1;
     color: var(--ivory);
-    margin-bottom: 2mm;
+    margin-bottom: 2.5mm;
 }
 .ps-title em {
     font-style: italic;
@@ -327,8 +349,8 @@ b, strong { font-weight: 700; }
 }
 
 .ps-underline {
-    width: 20mm;
-    height: 1.5px;
+    width: 24mm;
+    height: 2px;
     background: var(--flame);
     margin-bottom: 5mm;
 }
@@ -338,15 +360,17 @@ b, strong { font-weight: 700; }
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1mm;
+    justify-content: space-between;
+    flex: 1 1 auto;
+    gap: 2mm;
 }
 .timeline-list li {
     display: grid;
-    grid-template-columns: 14mm 1fr;
+    grid-template-columns: 16mm 1fr;
     gap: 3mm;
-    padding: 1mm 0;
+    padding: 2.5mm 0;
     border-left: 1.5px solid var(--flame);
-    padding-left: 4mm;
+    padding-left: 5mm;
     position: relative;
 }
 .timeline-list li::before {
@@ -362,15 +386,15 @@ b, strong { font-weight: 700; }
     box-shadow: 0 0 8px var(--flame-glow);
 }
 .tl-year {
-    font-size: 9pt;
+    font-size: 11pt;
     font-weight: 700;
     color: var(--flame);
     letter-spacing: 0.08em;
     align-self: center;
 }
 .tl-body {
-    font-size: 8pt;
-    line-height: 1.4;
+    font-size: 9pt;
+    line-height: 1.45;
     color: var(--ivory-deep);
 }
 .tl-body b { color: var(--ivory); }
