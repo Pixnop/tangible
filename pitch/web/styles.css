@@ -1958,12 +1958,14 @@ button {
     align-items: center;
     justify-content: center;
     gap: 6px;
-    padding: 10px 8px 8px;
-    min-height: 72px;
+    padding: 12px 12px 10px;
+    min-height: 76px;
+    min-width: 0;
     background: rgba(43, 47, 51, 0.04);
     border: 1px solid rgba(43, 47, 51, 0.06);
     border-radius: 10px;
     transition: background .2s, border-color .2s, transform .2s;
+    overflow: hidden;
 }
 .partner-chip:hover {
     background: rgba(230, 115, 60, 0.08);
@@ -1971,14 +1973,17 @@ button {
     transform: scale(1.03);
 }
 .partner-chip img {
+    display: block;
     width: auto;
     height: auto;
     max-width: 100%;
-    max-height: 28px;
+    max-height: 30px;
+    min-width: 0;
     object-fit: contain;
     filter: brightness(0);
     opacity: 0.85;
     transition: opacity .2s, filter .2s;
+    flex-shrink: 1;
 }
 .partner-chip:hover img {
     opacity: 1;
