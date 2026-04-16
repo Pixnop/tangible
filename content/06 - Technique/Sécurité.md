@@ -68,7 +68,7 @@ graph TB
 │ ├── Codec utilisé (H.265 / AV1)              │
 │ ├── Résolution / bitrate                     │
 │ ├── Message clair : "Téléchargez             │
-│ │   Tangible sur tangible.film"              │
+│ │   Tangible sur tangible-app.eu"              │
 │ └── Signature du header (Ed25519)            │
 ├──────────────────────────────────────────────┤
 │ MANIFEST CHIFFRÉ (variable)                  │
@@ -193,7 +193,7 @@ Le TPM déchiffre la `chunk_key_N` (32 bytes, rapide), **pas** le chunk de 2 Mo 
 ```mermaid
 sequenceDiagram
     participant APP as App Tangible
-    participant API as api.tangible.film
+    participant API as api.tangible-app.eu
     participant TPM as TPM
 
     Note over APP: Tous les 7 jours (auto)
@@ -351,7 +351,7 @@ graph LR
     E --> MK[Master Keys]
     E --> TOOL[Outil OSS de déchiffrement]
     E --> DOC[Spec format .tgibl]
-    MON[Monitor api.tangible.film] -->|90j inactif| T[Trigger]
+    MON[Monitor api.tangible-app.eu] -->|90j inactif| T[Trigger]
     T --> IPFS[Publication IPFS]
     T --> GH[Publication GitHub]
     T --> APP[App 'mode libéré']
@@ -359,7 +359,7 @@ graph LR
 ```
 
 ### Condition de déclenchement
-**Si `api.tangible.film` ne répond plus pendant 90 jours consécutifs**.
+**Si `api.tangible-app.eu` ne répond plus pendant 90 jours consécutifs**.
 
 ### Déclenchement automatique
 1. Publication des **Master Keys** sur IPFS (permanent, décentralisé)

@@ -14,9 +14,13 @@ priorité: haute
 > **Tangible** évoque la **matérialité**, la **permanence**, la **possession réelle** — même pour un bien purement numérique.
 
 ### Disponibilité
-- [ ] À vérifier : nom de domaine `tangible.film` / `tangible.movie` / `tangible.io`
-- [ ] INPI — marque verbale + figurative
-- [ ] Réseaux sociaux : `@tangible.films`
+- [x] **Nom de domaine acquis** : `tangible-app.eu` (acheté sur OVH, ~5 €/an)
+  - `tangible.fr`, `tangible.tv`, `tangible.eu`, `tangible-app.fr` tous pris au moment du choix.
+  - Positionnement européen cohérent avec la Phase 4 d'expansion UE (voir [[Roadmap Technique]]).
+  - Emails pro à configurer : `contact@tangible-app.eu`, `studios@tangible-app.eu`, `support@tangible-app.eu`.
+- [ ] À racheter ultérieurement si libéré : `tangible.fr` (redirection France), `tangible-app.fr` (backup), `tangible.tv` (premium long terme).
+- [ ] INPI — marque verbale + figurative.
+- [ ] Réseaux sociaux à réserver : `@tangibleapp` (cohérent avec le domaine), fallback `@tangible.films`.
 
 ## 💬 Slogan officiel
 
