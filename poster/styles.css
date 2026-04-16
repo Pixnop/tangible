@@ -84,6 +84,43 @@ body {
     min-height: 100vh;
 }
 
+/* Bouton telechargement PDF (ecran uniquement) */
+.dl-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background: #E6733C;
+    color: #FBF8F1;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(230,115,60,.35), 0 2px 6px rgba(0,0,0,.3);
+    transition: transform .2s, box-shadow .2s, background .2s;
+}
+.dl-btn:hover {
+    background: #FF8A4F;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(230,115,60,.5), 0 4px 10px rgba(0,0,0,.4);
+}
+.dl-btn em {
+    font-style: italic;
+    font-weight: 700;
+    color: #FFEDD5;
+    margin-left: 2px;
+}
+.dl-btn svg { flex-shrink: 0; }
+@media print {
+    .dl-btn { display: none !important; }
+}
+
 img { max-width: 100%; display: block; }
 
 /* ─── Grain overlay ───────────────────────────────── */
@@ -189,7 +226,7 @@ img { max-width: 100%; display: block; }
     background: var(--flame);
 }
 
-em { font-style: italic; color: var(--flame-bright); font-family: var(--font-title); font-weight: 700; }
+em { font-style: italic; color: #E55A1E; font-family: var(--font-title); font-weight: 900; }
 b, strong { font-weight: 700; }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -254,8 +291,8 @@ b, strong { font-weight: 700; }
 }
 .hero-slogan em {
     font-style: italic;
-    font-weight: 700;
-    color: var(--flame);
+    font-weight: 900;
+    color: #E55A1E;
 }
 
 .hero-slogan-en {
